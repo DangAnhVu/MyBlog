@@ -1,0 +1,1590 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
+    <title>VU&#x27;S BLOG</title>
+    <link href="https://danganhvu.github.io/MyBlog/feed.xml" rel="self" />
+    <link href="https://danganhvu.github.io/MyBlog" />
+    <updated>2024-12-30T00:47:05+07:00</updated>
+    <author>
+        <name>Dang Anh Vu</name>
+    </author>
+    <id>https://danganhvu.github.io/MyBlog</id>
+
+    <entry>
+        <title>BẠN ĐÃ PHÂN BIỆT ĐƯỢC OVERRIDING VÀ OVERLOADING?</title>
+        <author>
+            <name>Dang Anh Vu</name>
+        </author>
+        <link href="https://danganhvu.github.io/MyBlog/ban-da-phan-biet-duoc-overriding-va-overloading.html"/>
+        <id>https://danganhvu.github.io/MyBlog/ban-da-phan-biet-duoc-overriding-va-overloading.html</id>
+        <media:content url="https://danganhvu.github.io/MyBlog/media/posts/19/overiding-va-overloading-63739896651.9348.jpg" medium="image" />
+            <category term="Java"/>
+
+        <updated>2024-12-30T00:46:53+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://danganhvu.github.io/MyBlog/media/posts/19/overiding-va-overloading-63739896651.9348.jpg" alt="" />
+                    Overloading (Nạp chồng phương thức) và Overriding (ghi đè phương thức) là&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://danganhvu.github.io/MyBlog/media/posts/19/overiding-va-overloading-63739896651.9348.jpg" class="type:primaryImage" alt="" /></p>
+                
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/overiding-va-overloading-63739896651.9348-2.jpg" height="451" width="813" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-2-xs.jpg 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-2-sm.jpg 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-2-md.jpg 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-2-xl.jpg 1024w">
+      
+    </figure>
+<div><b>Overloading (Nạp chồng phương thức) và Overriding (ghi đè phương thức) là hai khái niệm cơ bản trong lập trình mà bất kì newbie nào cũng cần phân biệt. Vậy chúng là gì? Khác nhau thế nào? Hãy cùng mình phân tích và tìm hiểu nhé.</b></div>
+
+    <h2 id="overloading-nap-chong-phuong-thuc-la-gi">
+      Overloading (Nạp chồng phương thức) là gì?
+    </h2>
+<div><p>
+Overloading là một kĩ thuật cho phép trong cùng một class có thể có nhiều phương thức cùng tên nhưng khác nhau về số lượng tham số hoặc kiểu dữ liệu tham số. Ví dụ chúng ta có hàm tinhTong dùng để cộng hai số nguyên. Khi muốn cộng ba số nguyên không lẽ tôi lại phải viết một hàm với tên khác(chẳng hạn <i>tinhTong1  </i>) và truyền vào 3 số nguyên hay sao? Như vậy thì code sẽ trở nên phức tạp hơn trong khi hai hàm có cùng một mục đích là cộng các số nguyên lại với nhau. Như vậy chúng ta sẽ <b>overload</b> hàm <i>tinhTong</i> như sau:
+</p></div>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/1.png" height="399" width="413" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/1-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/1-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/1-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/1-xl.png 1024w">
+      
+    </figure>
+<div><p>Khi gọi hàm <i>tinhTong</i> và truyền vào số lượng tham số khác nhau thì sẽ gọi tới hàm có số lượng tham số tương ứng</p></div>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/2.png" height="551" width="504" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/2-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/2-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/2-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/2-xl.png 1024w">
+      
+    </figure>
+<div><p>
+Chú ý vào cửa sổ "Watch 1" ta thấy giá trị của hai biến a và b lần lượt là giá trị trả về của hai hàm <i>tinhTong(int a, int b)</i> và hàm <i>tinhTong(int a, int b, int c)</i> 
+<br>  
+Tương tự chứ ta có thể <b>overload</b>   kiểu dữ liệu của tham số. Thay vì hàm tinhTong cộng hai số nguyên thì tôi cũng có thể cộng hai số thực, chỉ cần truyền vào 2 tham số kiểu double.
+<  /p></div>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/3.png" height="499" width="393" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/3-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/3-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/3-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/3-xl.png 1024w">
+      
+    </figure>
+<div><p>Tương tự giá trị biến c là giá trị trả về của hàm <i>tinhTong(double a, double b)</i> sau khi truyền vào hai tham số kiểu double.</p></div>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/4.png" height="554" width="505" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/4-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/4-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/4-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/4-xl.png 1024w">
+      
+    </figure>
+
+  <p>
+    Tạo constructor với số lượng tham số khác nhau cũng là một dạng của oveloading.
+  </p>
+
+    <h2 id="overriding-ghi-de-phuong-thuc-la-gi">
+      Overriding (Ghi đè phương thức) là gì?
+    </h2>
+<div>Overrding (tên đầy đủ là Method Overriding), được sử dụng trong trường hợp lớp con kế thừa từ lớp cha và muốn định nghĩa lại một phương thức đã có mặt ở lớp cha. Một lớp cha thông thường có thể có nhiều lớp con kế thừa, tuy nhiên phương thức ở lớp cha có thể phù hợp với lớp con này nhưng không phù hợp với lớp con khác, do đó lớp con cần ghi đè lại phương thức đó cho phù hợp. Ví dụ class <i>Animal</i> có phương thức <i>animalSound</i> đại diện cho tiếng kêu của động vật. Class <i>Dog</i> và <i>Cat</i> kế thừa từ class <i>Animal</i>, nhưng chó và mèo có tiếng kêu khác nhau nên phải <i>implement</i> phương thức <i>animalSound</i> cho mỗi lớp k  hác nhau. Vì vậy cần phải ghi đè lại phương thức <i>animalSound</  i> ở hai lớp Dog và Cat bằng cách sử dụng từ khóa <i>override</  i> như sau(lưu ý ví dụ minh họa sử dụng code C#, những ngôn ngữ khác nhau sẽ overriding theo cú pháp khác nhau nhưng về bản chất là như nhau).<i></div>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/5.png" height="401" width="319" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/5-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/5-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/5-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/5-xl.png 1024w">
+      
+    </figure>
+
+  <p>
+    Ở hàm main tạo instance của class Animal, Dog và Cat sẽ cho kết quả như sau.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/6.png" height="242" width="314" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/6-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/6-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/6-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/6-xl.png 1024w">
+      
+    </figure>
+
+  <p>
+    =&gt; Kết quả
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/7.png" height="237" width="258" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/7-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/7-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/7-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/7-xl.png 1024w">
+      
+    </figure>
+
+    <h2 id="so-sanh">
+      So sánh
+    </h2>
+<div><table border="1">
+    <thead>
+        <tr>
+            <th>Overloading</th>
+            <th>Overriding</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Thể hiện đa hình tại compile time</td>
+            <td>Thể hiện đa hình tại runtime</td>
+        </tr>
+        <tr>
+            <td>Thêm hành vi cho phương thức</td>
+            <td>Thay đổi hành vi hiện tại của phương thức</td>
+        </tr>
+        <tr>
+            <td>Có thể khác nhau về số lượng và kiểu dữ liệu của tham số</td>
+            <td>Số lượng và kiểu dữ liệu của tham số phải giống nhau</td>
+        </tr>
+        <tr>
+            <td>Xảy ra trong cùng một class</td>
+            <td>Xảy ra ở 2 class có quan hệ kế thừa</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+  <p>
+    Hi vọng qua bài viết này các bạn sẽ hiểu rõ hơn và không còn nhầm lẫn giữa hai khái niệm này nữa.
+  </p>
+
+  <p>
+    Thanks ~
+  </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>3 CÁCH SINH SỐ NGẪU NHIÊN VỚI JAVA</title>
+        <author>
+            <name>Dang Anh Vu</name>
+        </author>
+        <link href="https://danganhvu.github.io/MyBlog/3-cach-sinh-so-ngau-nhien-voi-java.html"/>
+        <id>https://danganhvu.github.io/MyBlog/3-cach-sinh-so-ngau-nhien-voi-java.html</id>
+        <media:content url="https://danganhvu.github.io/MyBlog/media/posts/18/5-cach-sinh-so-ngau-nhien-voi-java-63742489096.9063.jpg" medium="image" />
+            <category term="Java"/>
+
+        <updated>2024-12-30T00:22:08+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://danganhvu.github.io/MyBlog/media/posts/18/5-cach-sinh-so-ngau-nhien-voi-java-63742489096.9063.jpg" alt="" />
+                    Số ngẫu nhiên là một số được chọn từ một nhóm giới&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://danganhvu.github.io/MyBlog/media/posts/18/5-cach-sinh-so-ngau-nhien-voi-java-63742489096.9063.jpg" class="type:primaryImage" alt="" /></p>
+                
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/18/5-cach-sinh-so-ngau-nhien-voi-java-63742489096.9063-2.jpg" height="450" width="800" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/18/responsive/5-cach-sinh-so-ngau-nhien-voi-java-63742489096.9063-2-xs.jpg 320w ,https://danganhvu.github.io/MyBlog/media/posts/18/responsive/5-cach-sinh-so-ngau-nhien-voi-java-63742489096.9063-2-sm.jpg 480w ,https://danganhvu.github.io/MyBlog/media/posts/18/responsive/5-cach-sinh-so-ngau-nhien-voi-java-63742489096.9063-2-md.jpg 768w ,https://danganhvu.github.io/MyBlog/media/posts/18/responsive/5-cach-sinh-so-ngau-nhien-voi-java-63742489096.9063-2-xl.jpg 1024w">
+      
+    </figure>
+<div><b>Số ngẫu nhiên là một số được chọn từ một nhóm giới hạn hoặc vô hạn các số mà không có một quy luật cụ thể để dự đoán được. Một chương trình sinh ra số ngẫu nhiên sẽ tạo ra các số khác nhau tại những thời điểm khác nhau trong quá trình thực thi. Mặc dù việc sinh số ngẫu nhiên trong lập trình đều dựa vào các thuật toán nên chúng không phải hoàn toàn là ngẫu nhiên nhưng thực tế chúng được ứng dụng trong nhiều mục đích khác nhau như thống kê, mã hóa, game,…</b></div>
+
+  <p>
+    Trong bài viết này chúng ta sẽ cùng nhau tìm hiểu 3 cách tạo số ngẫu nhiên với Java.
+  </p>
+
+    <h2 id="1-su-dung-lop-math">
+      1. Sử dụng lớp Math
+    </h2>
+<div><p>
+Java cung cấp nhiều cách khác nhau để sinh số ngẫu nhiên trong một pham vi cho trước. Với cách này và 2 cách về sau chúng ta sẽ xét trong phạm vi từ 1-100.
+<br>
+Math hay <em>java.lang.Math</em> là một lớp trong Java cung cấp các thao tác cơ bản với số như mũ, căn bậc, giá trị tuyệt đối, làm tròn,… Trong đó có phương thức <em>random()  </em> cho phép chúng ta tạo ra một số thập phân có giá trị lớn hơn hoặc bằng 0.0 và bé hơn 1.0(0.99999), giá trị của số thập phân này là ngẫu nhiên mỗi khi chạy phương thức.
+<br>
+Ở đây chúng ta xét trong phạm vi số nguyên từ 1 đến 100 nên để thay đổi từ phạm vi [0,1) thành [1,100] thì giá trị thập phân trả về bên trên cần nhân với 100 và cộng thêm 1 rồi ép kiểu(cast) về kiểu <b>int</b> như sau:</p></div>
+<pre class="line-numbers  language-java"><code>public class Random {
+    public static void main(String[] args) {
+        usingMathClass();
+    }
+    static void usingMathClass() {
+        //Vòng lặp in ra 5 số ngẫu nhiên
+        for (int i=0; i&lt;5; i++) {
+            double randomDouble = Math.random();
+            randomDouble = randomDouble * 100 + 1;
+            int randomInt = (int) randomDouble;
+            System.out.println("Random number is : " + randomInt);
+        }
+    }
+}</code></pre>
+
+  <p>
+    Output:
+  </p>
+<pre class="line-numbers  language-html"><code>Random number is : 96
+Random number is : 17
+Random number is : 75
+Random number is : 11
+Random number is : 18</code></pre>
+
+    <h2 id="2-su-dung-lop-random">
+      2. Sử dụng lớp Random
+    </h2>
+<div><p>
+Java.util.Random cung cấp phương thức <em>nextInt()</em> với tham số truyền vào là một số nguyên không âm dùng để sinh số ngẫu nhiên trong phạm vi từ 0 đến một giá trị cho trước. Giá trị của số ngẫu nhiên lớn hơn hoặc bằng 0 và nhỏ hơn tham số truyền vào. Thực chất, thuật toán của lớp này chính là sử dụng công thức đồng dư tuyến tính(linear congruential generator).
+<br>
+Để có được phạm vi [1,100] thì tham số truyền vào là 100 và giá trị trả về của phương thức cộng thêm 1:
+</p></div>
+<pre class="line-numbers  language-java"><code>import java.util.Random;
+public class Random {
+    public static void main(String[] args) {
+        usingRandomClass();
+    }
+    static void usingRandomClass() {
+        //Vòng lặp in ra 5 số ngẫu nhiên
+        for (int i=0; i&lt;5; i++) {
+            Random rand = new Random();
+            int ranNum = rand.nextInt(100)+1;
+            System.out.println("Random number is " + ranNum);
+        }
+    }
+}</code></pre>
+
+  <p>
+    Output:
+  </p>
+<pre class="line-numbers  language-html"><code>Random number is 31
+Random number is 14
+Random number is 59
+Random number is 18
+Random number is 52</code></pre>
+
+    <h2 id="3-su-dung-lop-threadlocalrandom">
+      3. Sử dụng lớp ThreadLocalRandom
+    </h2>
+<div><p>
+Kể từ Java 7 ta được cung cấp một lớp mới <em>java.util.concurrent.ThreadLocalRandom</em> cho phép sinh số ngẫu nhiên trong môi trường đa luồng và ít tốn kém hơn so với việc sử dụng lớp java.util.Random.
+<br>
+Lớp <em>ThreadLocalRandom  </em> cung cấp phương thức <em>nextInt()</em> với hai tham số truyền vào là giá trị biên dưới và giá trị biên trên, giá trị trả về sẽ lớn hơn hoặc bằng biên dưới và bé hơn giá trị biên trên.
+<br>
+Do dó để có phạm vi sinh số ngẫu nhiên [1, 100] thì hai tham số truyền vào sẽ là 1 và 101. Để thực thi phương thức <em>nextInt()</em> nà trước hết ta cần gọi đến phương thức <em>current  ()</em> để trả về ThreadLocalRandom của luồng hiện tại.
+</p></div>
+<pre class="line-numbers  language-java"><code>import java.util.concurrent.ThreadLocalRandom;
+public class Random {
+    public static void main(String[] args) {
+        usingThreadLocalClass();
+    }
+    static void usingThreadLocalClass() {
+        //Vòng lặp in ra 5 số ngẫu nhiên
+        for (int i=0; i&lt;5; i++) {
+            int ranNum = ThreadLocalRandom.current().nextInt(1,101);
+            System.out.println("Random number is "+ranNum);
+        }
+    }
+}</code></pre>
+
+  <p>
+    Output:
+  </p>
+<pre class="line-numbers  language-html"><code>Random number is 17
+Random number is 100
+Random number is 47
+Random number is 49
+Random number is 40</code></pre>
+<div><b>Một số chú ý:</b></div>
+<div><ul>
+<li>Giá trị truyền vào của phương thức <em>nextInt()</em> nên là số dương, nếu nhỏ hơn 0 chương trình sẽ trả về exception thuộc lớp <em>java.lang.IllegalArgumentException</em>.</li>
+<li>Lớp <em>java.lang.Math</em> sử dụng phương thức <em>nextDouble()</em> của lớp <em>java.util.Random</em> để dùng cho phương thức <em>random()</em> của nó.  </li>
+<li><em>java.util.concurrent.ThreadLocalRandom</em> là một lớp con của lớp java.util.Random.</li>
+<li><em>java.util.Random</em> còn cung cấp các phương thức để sinh số ngẫu nhiên kiểu <b>long</b>, <b>double</b>, <b>boolean</b>, …</li>
+</ul></div>
+
+    <h2 id="ket">
+      Kết
+    </h2>
+
+  <p>
+    Như vậy mình và các đã cùng nhau tìm hiểu 3 cách sinh số ngẫu nhiên khác nhau. Nếu bài viết có ý nghĩa hãy để lại đánh giá cũng như comment giúp phát triển bài viết tốt hơn. Cảm ơn bạn đọc!
+  </p>
+
+  <p>
+    
+  </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>BIẾN KIỂU LET VÀ VAR TOÀN TẬP TRONG JAVASCRIPT</title>
+        <author>
+            <name>Dang Anh Vu</name>
+        </author>
+        <link href="https://danganhvu.github.io/MyBlog/bien-kieu-let-va-var-toan-tap-trong-javascript.html"/>
+        <id>https://danganhvu.github.io/MyBlog/bien-kieu-let-va-var-toan-tap-trong-javascript.html</id>
+        <media:content url="https://danganhvu.github.io/MyBlog/media/posts/17/bien-kieu-let-va-var-trong-javascript-63731631485.4858.jpg" medium="image" />
+            <category term="JavaScript"/>
+
+        <updated>2024-12-30T00:07:24+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://danganhvu.github.io/MyBlog/media/posts/17/bien-kieu-let-va-var-trong-javascript-63731631485.4858.jpg" alt="" />
+                    Một trong những tính năng nổi bật của ECMAScript 2015 đó là&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://danganhvu.github.io/MyBlog/media/posts/17/bien-kieu-let-va-var-trong-javascript-63731631485.4858.jpg" class="type:primaryImage" alt="" /></p>
+                
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/17/bien-kieu-let-va-var-trong-javascript-63731631485.4858-2.jpg" height="415" width="716" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/17/responsive/bien-kieu-let-va-var-trong-javascript-63731631485.4858-2-xs.jpg 320w ,https://danganhvu.github.io/MyBlog/media/posts/17/responsive/bien-kieu-let-va-var-trong-javascript-63731631485.4858-2-sm.jpg 480w ,https://danganhvu.github.io/MyBlog/media/posts/17/responsive/bien-kieu-let-va-var-trong-javascript-63731631485.4858-2-md.jpg 768w ,https://danganhvu.github.io/MyBlog/media/posts/17/responsive/bien-kieu-let-va-var-trong-javascript-63731631485.4858-2-xl.jpg 1024w">
+      
+    </figure>
+<div><b>Một trong những tính năng nổi bật của ECMAScript 2015 đó là sự bổ sung let và const phục vụ cho việc khai báo biến dữ liệu. Vậy sự khác biệt giữa biến khai báo dùng let và biến khai báo dùng var là gì, thì ở bài viết này chúng ta sẽ cùng tìm hiểu .</b></div>
+
+    <h2 id="ecmascript-2015">
+      ECMAScript 2015
+    </h2>
+<div><p>
+ES2015 đã giới thiệu 2 keywords mới quan trọng là: <em>let</em> và <em>const</em>.
+<br>
+Hai từ khóa này cung cấp các biến <b>Block Scope</b> (và constant) trong JavaScript.
+<br>
+Trước ES2015, JavaScript chỉ có 2 loại phạm vi: phạm vi toàn cục (<b>Global Scope</b>) và phạm vi của hàm (<b>Function Scope</b>). </p></div>
+
+    <h2 id="global-scope">
+      Global Scope
+    </h2>
+
+  <p>
+    Những biến được khai báo bên ngoài bất kì một hàm sẽ có phạm vi toàn cục.<br>Ví dụ:
+  </p>
+<pre class="line-numbers  language-javascript"><code>var carName = "Volvo";
+
+// code ở đây có thể sử dụng biến carName
+
+function myFunction() {
+  // code ở đây cũng có thể sử dụng biến carName
+}
+</code></pre>
+<div><p>Biến <b>toàn cục</b> có thể được truy cập từ bất cứ đâu trong chương trình JavaScript .  </p></div>
+
+    <h2 id="function-scope">
+      Function Scope
+    </h2>
+
+  <p>
+    Biến được khai báo cục bộ (bên trong một hàm) sẽ có phạm vi cục bộ.<br>Ví dụ:
+  </p>
+<pre class="line-numbers  language-javascript"><code>// code ở đây không thể sử dụng biến carName
+
+function myFunction() {
+  var carName = "Volvo";
+  // code ở đây có thể sử dụng biến carName
+}
+
+// code ở đây không thể sử dụng biến carName</code></pre>
+<div><p>Biến <b>cục bộ</b> chỉ có thể được truy cập từ bên trong hàm nơi chúng được khai báo.</p></div>
+
+    <h2 id="javascript-block-scope">
+      JavaScript Block Scope
+    </h2>
+<div><p>
+Biến được khai báo với từ khóa <em>var</em> không thể có <b>Block Scope</b>.
+<br>
+Biến được khai báo bên trong một block (block là code trong dấu ngoặc nhọn <b>{}</b> ) có thể được truy cập từ bên ngoài block.
+<br>  
+Ví dụ:  
+</p></div>
+<pre class="line-numbers  language-javascript"><code>{
+  var x = 2;
+}
+// x CÓ THỂ được sử dụng ở đây</code></pre>
+
+    <h2 id="redeclaring-khai-bao-trung-lap">
+      Redeclaring (khai báo trùng lặp)
+    </h2>
+<div><p>Khai báo lại một biến bên trong một block với từ khóa <em>var</em> sẽ ảnh hưởng biến đó bên ngoài block:</p></div>
+<pre class="line-numbers  language-javascript"><code>var x = 10;
+// ở đây x là 10
+{
+  var x = 2;
+  // ở đây x là 2
+}
+// ở đây x là 2</code></pre>
+<div><p>Khai báo lại một biến bên trong một block với từ khóa <em>let</em> sẽ không ảnh hưởng đến biến đó bên ngoài block:</p></div>
+<pre class="line-numbers  language-javascript"><code>var x = 10;
+// ở đây x là 10
+{
+  let x = 2;
+  // ở đây x là 2
+}
+// ở đây x vẫn là 10</code></pre>
+
+    <h2 id="loop-scope">
+      Loop Scope
+    </h2>
+<div><p>Sử dụng <en>var</em> trong một vòng lặp :</p></div>
+<pre class="line-numbers  language-javascript"><code>var i = 5;
+for (var i = 0; i &lt; 10; i++) {
+  // một số câu lệnh 
+}
+// ở đây i là 10</code></pre>
+<div><p>Sử dụng <em>let</em> trong một vòng lặp :</p></div>
+<pre class="line-numbers  language-javascript"><code>let i = 5;
+for (let i = 0; i &lt; 10; i++) {
+  // một số câu lệnh
+}
+// Ở đây i vẫn là 5</code></pre>
+<div><p>
+Trong ví dụ sử dụng <em>var</em>, biến i được khai báo lại trong vòng lặp sẽ thay đổi giá trị trước đó của biến i bên ngoài vòng lặp.
+<br>
+Trong ví dụ sử dụng <em>let</em>, biến i  được khai báo trong vòng lặp sẽ không thay đổi giá trị trước đó của biến i bên ngoài vòng lặp.
+</p></div>
+
+    <h2 id="function-scope">
+      Function Scope
+    </h2>
+<div><p>
+Biến được khai báo với <em>var</em> và <em>let</em> là tương tự nhau khi được khai báo bên ngoài một block.
+<br>
+Cả hai sẽ có <b>Global Scope</b>:</p></div>
+<pre class="line-numbers  language-javascript"><code>var x = 2;       // Global scope
+let x = 2;       // Global scope</code></pre>
+
+    <h2 id="bien-global-trong-html">
+      Biến Global trong HTML
+    </h2>
+<div><p>
+Với JavaScript, phạm vi toàn cục là môi trường JavaScript.
+<br>
+Trong HTML, phạm vi toàn cục là đối tượng window.
+<br>
+Biến global được xác định bằng từ khóa <em>var</em> thuộc về đối tượng window.
+<br>
+Ví dụ:
+</p></div>
+<pre class="line-numbers  language-javascript"><code>var carName = "Volvo";
+
+// code ở đây có thể sử dụng window.carName
+
+document.getElementById("demo").innerHTML = "I can display " + window.carName;//I can display Volvo</code></pre>
+<div><p>Biến global được xác định bằng từ khóa <em>let</em> không thuộc về đối tượng window.</p></div>
+<pre class="line-numbers  language-javascript"><code>let carName = "Volvo";
+
+// code ở đây có thể sử dụng window.carName
+
+document.getElementById("demo").innerHTML = "I can not display " + window.carName;//I can not display underfined</code></pre>
+
+    <h2 id="redeclaring-khai-bao-trung-lap">
+      Redeclaring (khai báo trùng lặp )
+    </h2>
+<div><p>Redeclaring một biến JavaScript với <em>var</em> là được phép ở bất cứ đâu trong chương trình:</p></div>
+<pre class="line-numbers  language-javascript"><code>var x = 2;
+
+// Now x is 2
+ 
+var x = 3;
+
+// Now x is 3</code></pre>
+<div><p>Redeclaring một biến kiểu <em>var</em> với <em>let</em>, trong cùng phạm vi, hoặc cùng block, là <b>KHÔNG</b> được phép:</p></div>
+<pre class="line-numbers  language-javascript"><code>var x = 2;       // Allowed
+let x = 3;       // Not allowed
+
+{
+  var x = 4;   // Allowed
+  let x = 5   // Not allowed
+}</code></pre>
+<div><p>Redeclaring một biến kiểu <em>var</em> với <em>let</em>, trong cùng phạm vi, hoặc cùng block, là <b>KHÔNG</b> được phép:</p></div>
+<pre class="line-numbers  language-javascript"><code>let x = 2;       // Allowed
+let x = 3;       // Not allowed
+
+{
+  let x = 4;   // Allowed
+  let x = 5;   // Not allowed
+}</code></pre>
+<div><p>Redeclaring một biến kiểu <em>let</em> với <em>var</em>, trong cùng phạm vi, hoặc cùng block, là <b>KHÔNG</b> được phép:</p></div>
+<pre class="line-numbers  language-javascript"><code>let x = 2;       // Allowed
+var x = 3;       // Not allowed
+
+{
+  let x = 4;   // Allowed
+  var x = 5;   // Not allowed
+}</code></pre>
+<div><p>Redeclaring một biến với <em>let</em>, trong một phạm vi khác, hoặc một block khác, là được phép:</p></div>
+<pre class="line-numbers  language-javascript"><code>let x = 2;       // Allowed
+
+{
+  let x = 3;   // Allowed
+}
+
+{
+  let x = 4;   // Allowed
+}</code></pre>
+
+    <h2 id="hoisting">
+      Hoisting
+    </h2>
+<div><p>
+Biến kiểu <em>var</em> sẽ bị hoisting và có thể được khởi tạo bất cứ lúc nào.
+<br>
+Thế nào là hoisting? Hoisting là cách javascript <b>kéo<b> tất cả các khai báo biến lên trên scope hiện tại.
+</p></div>
+<pre class="line-numbers  language-javascript"><code>console.log(carName);//not error,in ra underfined
+var carName = "Volvo";</code></pre>
+<div><p>Sau khi <b>hoisting</b> đoạn code trên được viết lại như sau:</p></div>
+<pre class="line-numbers  language-javascript"><code>var carName;          //khai báo được kéo lên trên cùng của scope này
+console.log(carName); //not error, in ra undefined 
+carName = "Volvo";</code></pre>
+<div><p>Biến kiểu <em>let</em> sẽ bị hoisting nhưng không được khởi tạo.</p></div>
+<pre class="line-numbers  language-javascript"><code>console.log(carName);// Error: không thể truy cập 'carName' trước khi khởi tạo 
+let carName = "Vinfast";</code></pre>
+
+    <h2 id="loi-ket">
+      Lời kết
+    </h2>
+<div><p>
+Trên đây là những kiến thức về biến <em>let</em> và biến <em>var</em> trong Javascript, thông qua bài viết hi vọng các bạn sẽ biết cách khai báo biến một cách hợp lí hơn. 
+<br>
+Cảm ơn các bạn đã đọc bài viết, nếu các bạn thấy hay thì ủng hộ giúp mình, có bất kì ý kiến đóng góp gì thì mong các bạn để lại comment ở dưới để chúng ta cùng thảo luận.
+</p></div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>OBJECT JAVASCRIPT VÀ NHỮNG ĐIỀU BẠN CẦN BIẾT</title>
+        <author>
+            <name>Dang Anh Vu</name>
+        </author>
+        <link href="https://danganhvu.github.io/MyBlog/object-javascript-va-nhung-dieu-ban-can-biet.html"/>
+        <id>https://danganhvu.github.io/MyBlog/object-javascript-va-nhung-dieu-ban-can-biet.html</id>
+        <media:content url="https://danganhvu.github.io/MyBlog/media/posts/16/object-javascript-63732666884.2419.jpg" medium="image" />
+            <category term="JavaScript"/>
+
+        <updated>2024-12-29T23:27:37+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://danganhvu.github.io/MyBlog/media/posts/16/object-javascript-63732666884.2419.jpg" alt="" />
+                    Như các bạn đã biết, Javascript có 5 kiểu dữ liệu Number,&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://danganhvu.github.io/MyBlog/media/posts/16/object-javascript-63732666884.2419.jpg" class="type:primaryImage" alt="" /></p>
+                <div><b>Như các bạn đã biết, Javascript có 5 kiểu dữ liệu <em>Number</em>, <em>String</em>, <em>Boolean</em>, <em>Undefined</em> và <em>Null</em> và còn 1 kiểu khác nữa đó là <em>Object</em> (kiểu dữ liệu phức hợp). Kiểu <em>Object</em> là kiểu được sử dụng nhiều nhất vì tính linh hoạt cực kỳ mạnh mẽ của nó trong việc xử lý dữ liệu. Chi tiết thế nào thì chúng ta cùng tìm hiểu nhé.</b></div>
+
+    <h2 id="object-la-gi">
+      Object là gì?
+    </h2>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/16/Capture.png" height="636" width="1439" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/16/responsive/Capture-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/16/responsive/Capture-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/16/responsive/Capture-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/16/responsive/Capture-xl.png 1024w">
+      
+    </figure>
+
+  <p>
+    Objects trong JavaScript, cũng tương tự như những ngôn ngữ khác, có thể so sánh như đối tượng trong đời thường. Khái niệm của objects trong JavaScript có thể được hiểu như những đối tượng thực tế trong đời thực.
+  </p>
+
+  <p>
+    Trong JavaScript, một object là một thực thể độc lập, với thuộc tính và kiểu. Lấy cái tách làm ví dụ. Cái tách là một object có những thuộc tính của riêng nó. Một cái tách có màu sắc, thiết kế, trọng lượng, chất liệu tạo ra nó, vân vân... Tương tự như vậy, JavaScript objects có thể có những thuộc tính định nghĩa nên đặc tính của nó.
+  </p>
+
+  <p>
+    Đối tượng trong Javascript là một tập hợp các cặp khóa - giá trị, tương tự như bản đồ, từ điển, hay hash-table trong ngôn ngữ lập trình khác.
+  </p>
+
+  <ul>
+    <li>Đối tượng là một tập hợp các thuộc tính
+</li><li>Thuộc tính là một cặp khóa - giá trị chứa tên và giá trị
+</li><li>Tên thuộc tính là một giá trị duy nhất có thể bị ép buộc vào một chuỗi và trỏ đến một giá trị
+</li><li>Giá trị thuộc tính có thể là bất kỳ giá trị nào, bao gồm các đối tượng khác hoặc các hàm, được liên kết với tên/khóa</li>
+  </ul>
+
+    <h2 id="doi-tuong-object-va-nhung-dieu-can-biet">
+      Đối tượng (Object) và những điều cần biết
+    </h2>
+<div><h3>1. Tạo đối tượng</h3></div>
+
+  <p>
+    Các bạn có 3 cách để khai báo đối tượng trong Javascript:&nbsp;
+  </p>
+
+  <ul>
+    <li>Sử dụng từ khóa {}
+</li><li>Sử dụng từ khóa new Object()
+</li><li>Sử dụng phương thức static</li>
+  </ul>
+
+  <p>
+    Dưới đây là ví dụ về tạo ra đối tượng rỗng trong Js:
+  </p>
+<pre class="line-numbers  language-javascript"><code>// literal
+const dog = { }
+
+// constructor
+const cat = new Object();
+
+// static method
+const horse = Object.create({ })</code></pre>
+<div><h3>2. Nhận và thiết đặt thuộc tính (Get and Set Properties)</h3></div>
+
+  <p>
+    Bây giờ chúng ta đã có 1 đối tượng trống, chúng ta cần thêm các thuộc tính vào nó bằng cách sử dụng các trình truy cập (accessors).
+  </p>
+<div><p>Tên thuộc tính hợp lệ bao gồm chữ cái, số, kí tự,.. có thể ép thành một chuỗi, nhưng không được sử dụng các từ dành riêng như <em>function</em>, <em>var</em>, <em>return</em>, .v.v.</p></div>
+<pre class="line-numbers  language-javascript"><code>get = object.property;
+object.property = set;</code></pre>
+
+  <p>
+    Kể từ ES6, chúng ta có một cách viết tắt thuận tiện để thiết lập các thuộc tính:
+  </p>
+<pre class="line-numbers  language-html"><code>let hello;
+let world;
+
+// Old way 
+const obj = {
+    hello: hello,
+    world: world
+}
+
+// Modern way 
+const obj = {
+    hello,
+    world,
+}</code></pre>
+
+  <p>
+    Sử dụng một biến hoặc biểu thức làm tên thuộc tính bằng cách đặt nó trong dấu ngoặc [] - đây được gọi là thuộc tính được tính toán
+  </p>
+<pre class="line-numbers  language-javascript"><code>const x = 'khoa';
+
+const obj = {
+  [x]: 07
+}
+
+obj.khoa // 07</code></pre>
+<div><p>Thuộc tính của đối tượng có thể được xóa với từ khóa <em>delete</em> </p></div>
+<pre class="line-numbers  language-javascript"><code>delete obj.hello;
+delete obj.world;</code></pre>
+<div><h3>3. Phương thức trong đối tượng</h3></div>
+
+  <p>
+    Một đối tượng ngoài các thuộc tính ra nó còn chứa hàm gọi là phương thức. Một phương thức là một hàm liên kết với một object, hoặc, có thể nói phương thức là một thuộc tính của object có giá trị là một hàm. Phương thức được định nghĩa giống như cách định nghĩa hàm, ngoài trừ việc chúng phải được gán như là thuộc tính của một object.
+  </p>
+
+  <p>
+    Thường các phương thức được định nghĩa qua một hàm khởi tạo đối tượng. Ví dụ:
+  </p>
+<pre class="line-numbers  language-javascript"><code>//Hàm khởi tạo đối tượng
+function person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.changeName = function (name) {
+    this.name = name;
+  }
+}
+
+//Tạo đối tượng
+var p = new person("Khoa", 19);
+
+p.changeName("Vân");
+//Giờ p.name bằng "Vân"</code></pre>
+
+  <p>
+    Các phương thức bạn cũng có thể định nghĩa bên ngoài hàm khởi tạo. Ví dụ:
+  </p>
+<pre class="line-numbers  language-javascript"><code>function person(name, age) {
+  this.name= name;
+  this.age = age;
+  this.yearOfBirth = bornYear; //Gán phương thức bên ngoài
+}
+
+//Hàm bên ngoài hàm tạo, hàm này được gán vào đối tượng qua hàm tạo ở trên
+function bornYear() {
+  return 2020 - this.age;
+}
+
+var p = new person("Khoa", 19);
+document.write(p.yearOfBirth());
+// Outputs 2001</code></pre>
+<div><h3>4. Setter và Getter</h3></div>
+<div><p>Một thuộc tính của của đối tượng còn thiết lập nó là hàm <em>setter</em> hoặc <em>getter</em>, nếu là <em>setter</em> nó chỉ được gọi qua toán tử gán giá trị cho nó, nếu là <em>getter</em> thì chỉ được gọi khi truy cập lấy giá trị thuộc tính.
+<br>
+Hàm <em>setter</em> định nghĩa bằng cách cho thêm set, hàm <em>getter</em> định nghĩa bằng cách cho thêm get</p></div>
+<pre class="line-numbers  language-javascript"><code>var obj = {
+    age: 0,
+
+    set ageInfo(age) {                              //Định nghĩa setter
+        console.log('setter - ' + age);
+        this.age = age;
+    },
+
+    get ageInfo() {                                 //Định nghĩa getter
+        console.log('getter');
+        return "Thông tin tuổi: " + this.age;
+    }
+};
+
+obj.ageInfo = 25;          //Gán -&gt; Tự động gọi settter
+alert(obj.ageInfo);        //Không phải gán -&gt; Tự động gọi getter</code></pre>
+<div><p>Trong trường hợp muốn định nghĩa <em>setter</em> / <em>getter</em> trong hàm tạo đối tượng thì bạn cần định nghĩa theo nguyên tắc thêm một thuộc tính vào đối tượng đã có với lệnh Object.defineProperty</p></div>
+<pre class="line-numbers  language-javascript"><code>//Một đối tượng đã có tên ob, thêm cho nó setter, getter có tên namepro
+Object.defineProperty(ob, 'namepro', {
+    set: function(x) {
+        //code setter ở đây
+       },
+    get: function() {
+            //code getter ở đây
+       }
+
+});</code></pre>
+
+  <p>
+    Ví dụ trên định nghĩa lại trong hàm tạo:
+  </p>
+<pre class="line-numbers  language-javascript"><code>  function person(age) {
+    this.age = 0;
+    Object.defineProperty(this, 'ageInfo', {
+        set : function (age) {
+            console.log('setter - ' + age);
+            this.age = age;
+        },
+        get : function () {
+            console.log('getter');
+            return "Thông tin tuổi: " + this.age;
+        }
+    });
+ }
+
+var obj = new person(0);
+
+obj.ageInfo = 25;
+alert(obj.ageInfo);</code></pre>
+<div><h3>5. Sử dụng this để tham chiếu tới đối tượng</h3></div>
+
+  <p>
+    Trong một đối tượng thông thường, this đề cập đến đối tượng mà nó được định nghĩa. Ví dụ:
+  </p>
+<pre class="line-numbers  language-javascript"><code>const obj = {
+  username: 'Khoa',
+  hello() {
+	console.log(`My name is ${this.username}`)
+  }
+}
+
+obj.hello(); // My name is Khoa  </code></pre>
+<div><h3>6. So sánh Objects</h3></div>
+
+  <p>
+    Trong JavaScript những object là kiểu tham chiếu. Hai đối tượng tách biệt không bao giờ bằng nhau, thậm chí nếu chúng có cùng những thuộc tính. Chỉ khi nó so sánh với chính nó thì kết quả mới là true.
+<br>
+<br>Ví dụ:
+  </p>
+<pre class="line-numbers  language-javascript"><code>// Two variables, two distinct objects with the same properties
+var fruit = {name: 'apple'};
+var fruitbear = {name: 'apple'};
+
+fruit == fruitbear; // return false
+fruit === fruitbear; // return false
+// Two variables, a single object
+var fruit = {name: 'apple'};
+var fruitbear = fruit;  // assign fruit object reference to fruitbear
+
+// here fruit and fruitbear are pointing to same object
+fruit == fruitbear; // return true
+fruit === fruitbear; // return true</code></pre>
+<pre class="line-numbers  language-javascript"><code>fruit.name = 'grape';
+console.log(fruitbear);    // yields { name: "grape" } instead of { name: "apple" }</code></pre>
+
+    <h2 id="constructor-la-gi">
+      Constructor là gì?
+    </h2>
+<div><p>
+<em>Phương thức constructor</em> là một phương thức đặc biệt dùng để khởi tạo 1 object và được tạo ở trong <em>class</em>.
+<br>  
+Cú pháp:</p></div>
+<pre class="line-numbers  language-javascript"><code>constructor([arguments]) { ... }</code></pre>
+
+  <p>
+    Ví dụ:
+  </p>
+<pre class="line-numbers  language-javascript"><code>class Polygon {
+  constructor() {
+    this.name = 'Polygon';
+  }
+}
+
+const poly1 = new Polygon();
+
+console.log(poly1.name);
+// expected output: "Polygon"</code></pre>
+<div><p>Chỉ có duy nhất 1 phương thức đặc biệt tên là "constructor" ở trong class. Có nhiều hơn 1 phương thức <em>constructor</em> ở trong class thì sẽ gây ra lỗi <em>SyntaxError  </em>.
+<br>
+Một constructor có thể sử dụng từ khóa <em>super  </em> để gọi đến constructor của class cha.
+<br>
+Nếu bạn không chỉ định 1 phương thức constructor thì constructor mặc định sẽ được sử dụng
+<br>
+Một ví dụ nữa sử dụng phương thức <em>constructor</em>:</p></div>
+<pre class="line-numbers  language-javascript"><code>class Square extends Polygon {
+  constructor(length) {
+    // Here, it calls the parent class' constructor with lengths
+    // provided for the Polygon's width and height
+    super(length, length);
+    // Note: In derived classes, super() must be called before you
+    // can use 'this'. Leaving this out will cause a reference error.
+    this.name = 'Square';
+  }
+
+  get area() {
+    return this.height * this.width;
+  }
+
+  set area(value) {
+    this.area = value;
+  } 
+}</code></pre>
+
+    <h2 id="tam-ket">
+      Tạm kết
+    </h2>
+
+  <p>
+    Như vậy trong bài viết này chúng ta đã cùng nhau tìm hiểu qua về các vấn đề về Object trong Javascript. Có thể chưa thật sự đầy đủ nhưng nó sẽ giúp các bạn có cái nhìn tổng quan hơn về Object trong Javascript. Bạn thấy thế nào về JS, hãy đưa ra những ý kiến trong quá trình sử dụng JS nhé. Nếu các bạn thấy bài viết hữu ích hãy rate 5* và share cho mọi người tham khảo!
+<br>
+<br>Hãy để lại comment để mình có thể hoàn thiện bản thân hơn trong tương lai. Cám ơn các bạn!&nbsp;
+  </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>THƯ VIỆN VÀ PACKAGE CẦN BIẾT TRONG JAVA</title>
+        <author>
+            <name>Dang Anh Vu</name>
+        </author>
+        <link href="https://danganhvu.github.io/MyBlog/thu-vien-va-package-can-biet-trong-java.html"/>
+        <id>https://danganhvu.github.io/MyBlog/thu-vien-va-package-can-biet-trong-java.html</id>
+        <media:content url="https://danganhvu.github.io/MyBlog/media/posts/15/thu-vien-va-package-trong-java-la-gi-63743551454.2783.jpg" medium="image" />
+            <category term="Java"/>
+
+        <updated>2024-12-29T23:17:21+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://danganhvu.github.io/MyBlog/media/posts/15/thu-vien-va-package-trong-java-la-gi-63743551454.2783.jpg" alt="" />
+                    Trong ngôn ngữ lập trình Java có thể nói thư viện và&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://danganhvu.github.io/MyBlog/media/posts/15/thu-vien-va-package-trong-java-la-gi-63743551454.2783.jpg" class="type:primaryImage" alt="" /></p>
+                
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/15/thu-vien-va-package-trong-java-la-gi-63743551454.2783-2.jpg" height="412" width="814" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/15/responsive/thu-vien-va-package-trong-java-la-gi-63743551454.2783-2-xs.jpg 320w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/thu-vien-va-package-trong-java-la-gi-63743551454.2783-2-sm.jpg 480w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/thu-vien-va-package-trong-java-la-gi-63743551454.2783-2-md.jpg 768w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/thu-vien-va-package-trong-java-la-gi-63743551454.2783-2-xl.jpg 1024w">
+      
+    </figure>
+<div><h3>Trong ngôn ngữ lập trình Java có thể nói thư viện và package là một trong những thứ mà dân lập trình cần phải có hiểu biết và biết cách sử dụng. Vậy thư viện và package trong java là gì ?</h3></div>
+
+    <h2 id="1-thu-vien-trong-java-la-gi">
+      1. Thư viện trong Java là gì?
+    </h2>
+
+  <p>
+    Thư viện trong Java chỉ là một tập hợp các lớp đã được viết bởi người khác có thể tải động mà các ngôn ngữ Máy ảo Java (JVM) có thể gọi vào lúc chạy.<br>Bạn tải xuống các lớp đó và cho máy tính của bạn biết về chúng, sau đó bạn có thể sử dụng các lớp đó trong mã của mình.<br>Điều này cho phép bạn mở rộng những gì Java có thể làm và dựa vào mã mà người khác đã thử nghiệm thay vì tự mình làm mọi thứ.
+  </p>
+
+    <h2 id="2-nhung-thu-vien-trong-java-ma-ban-nen-biet">
+      2. Những thư viện trong Java mà bạn nên biết
+    </h2>
+<div><h2>2.1. Logging Libraries (Thư viện ghi nhật ký)</h2></div>
+
+  <p>
+    Thư viện ghi nhật ký rất phổ biến, vì bạn cần chúng trong mọi dự án. Chúng là thứ quan trọng nhất đối với các ứng dụng phía máy chủ, vì nhật ký chỉ được đặt ở nơi bạn có thể thấy những gì đang diễn ra trên ứng dụng của mình.<br>Mặc dù JDK có thư viện ghi nhật ký của riêng nó, nhưng vẫn có những lựa chọn thay thế tốt hơn, ví dụ như Log4j, SLF4j và LogBack.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/15/slf4j-vs-Log4j.png" height="214" width="400" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/15/responsive/slf4j-vs-Log4j-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/slf4j-vs-Log4j-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/slf4j-vs-Log4j-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/slf4j-vs-Log4j-xl.png 1024w">
+      
+    </figure>
+<div><h2>2.2. Unit Testing Libraries (Thư viện kiểm tra đơn vị)</h2></div>
+
+  <p>
+    Kiểm thử đơn vị Java cung cấp cho các lập trình viên một phương tiện chuẩn hóa, tinh vi và có thể mở rộng để xây dựng một ứng dụng web hoặc bất kỳ phần mềm nào khác. Nó bao gồm một bộ sưu tập lớn các gói cung cấp mã được viết sẵn. Tùy thuộc vào lựa chọn của bạn về các khung thử nghiệm cho Java, chúng kết hợp các thư viện, trình biên dịch, công cụ và API.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/15/JUnit-5-library.png" height="344" width="400" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/15/responsive/JUnit-5-library-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/JUnit-5-library-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/JUnit-5-library-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/JUnit-5-library-xl.png 1024w">
+      
+    </figure>
+<div><h2>2.3. XML Parsing Libraries (Thư viện phân tích cú pháp XML)</h2></div>
+
+  <p>
+    Có nhiều thư viện phân tích cú pháp XML, bao gồm Xerces, JAXB, JAXP, Dom4j và Xstream. Xerces2 là thế hệ tiếp theo của trình phân tích cú pháp XML hoàn toàn tuân thủ, hiệu suất cao trong họ Apache Xerces. Phiên bản mới này của Xerces giới thiệu Xerces Native Interface (XNI), một khung hoàn chỉnh để xây dựng các cấu hình và thành phần phân tích cú pháp cực kỳ mô-đun và dễ lập trình.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/15/xml-processing-sax.gif" height="302" width="400" alt="" >
+      
+    </figure>
+<div><h2>2.4. Apache Commons (Thư viện mục đích chung)</h2></div>
+
+  <p>
+    Commons Math: Thư viện Toán học Apache Commons - cái tên nói lên tất cả: thư viện này chứa các thành phần cho phép các phép toán và tính toán cao cấp, thống kê<br>Commons CLI - cung cấp API để phân tích cú pháp các đối số dòng lệnh. Tại sao bạn thậm chí sẽ bận tâm tạo một ứng dụng mà không có khả năng chuyển các tham số và kiểm soát hành vi của nó<br>Commons IO - nó đang được sử dụng để thực hiện các thao tác nhập / xuất dễ dàng hơn. Kiểm tra ít nhất là ReversedLinesFileReader chắc chắn đáng giá.
+<br>
+<br>
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/15/design-patterns-chain-of-responsibility-apache-common-chain.png" height="426" width="678" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/15/responsive/design-patterns-chain-of-responsibility-apache-common-chain-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/design-patterns-chain-of-responsibility-apache-common-chain-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/design-patterns-chain-of-responsibility-apache-common-chain-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/design-patterns-chain-of-responsibility-apache-common-chain-xl.png 1024w">
+      
+    </figure>
+<div><p>
+<b>java.lang</b> luôn được nhập ngầm vì nó chứa mọi thứ mà bạn về cơ bản không thể lập trình nếu không có String, Double, Enum, Math, v.v.<br>
+
+Trong <b>java.util</b>, bạn có thể tìm thấy tất cả các bộ sưu tập và cấu trúc dữ liệu có sẵn trong Java.<br>
+
+Tiếp theo có <b>java.io</b> để đọc tệp, làm việc với đường dẫn, luồng và tương tự.<br>
+
+Ngoài ra còn có <b>java.nio</b> , thực sự là sự thay thế cho <b>java.io</b> và là viết tắt của I / O không chặn. Nó cho phép sử dụng chuyên sâu các hoạt động đầu vào / đầu ra như bạn có thể đoán.<br>
+
+<b>java.math</b> cung cấp chức năng để làm việc với các giá trị thập phân (<i>BigDecimal</i>) và số nguyên (<i>BigInteger  </i>) có độ chính xác tùy ý<br>
+
+<b>java.net</b> đang được sử dụng để làm việc với socket, tạo kết nối hay nói ngắn gọn là tạo các ứng dụng mạng<br>
+
+Trong Java,  cũng có các thư viện để làm việc với GUI: <i>javax.swing</i>(phần mở rộng của cũ hơn <i>java.awt  </i>)<br>
+
+Ngoài ra còn có một số thư viện khác như Date and Time Libraries, Collection Libraries, Email APIs, HTTP Libraries, Excel Reading Libraries......v.v<br>
+</p>  </div>
+
+    <h2 id="3-package-trong-java-la-gi">
+      3. Package trong Java là gì?
+    </h2>
+
+  <p>
+    Packge (gói) trong java là một nhóm các loại lớp, giao diện và gói con tương tự nhau.
+<br>
+<br>Gói trong java có thể được phân loại theo hai dạng, gói có sẵn và gói do người dùng định nghĩa.<br>Có nhiều gói tích hợp sẵn như java, lang, awt, javax, swing, net, io, Prac, sql, v.v.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/15/Package-tutorial-in-Java.png" height="407" width="776" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/15/responsive/Package-tutorial-in-Java-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/Package-tutorial-in-Java-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/Package-tutorial-in-Java-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/Package-tutorial-in-Java-xl.png 1024w">
+      
+    </figure>
+
+    <h2 id="4-nhung-dieu-ban-can-biet-ve-package">
+      4. Những điều bạn cần biết về Package?
+    </h2>
+
+  <p>
+    Quy ước đặt tên Package (gói):Các gói được đặt tên theo thứ tự ngược lại của tên miền, tức là org.geeksforgeeks.practice. Ví dụ: trong trường cao đẳng, quy ước được đề xuất là college.tech.cse, college.tech.ee, college.art.history, v.v.
+  </p>
+
+  <p>
+    Thêm một lớp vào một Gói: Chúng ta có thể thêm nhiều lớp hơn vào một gói đã tạo bằng cách sử dụng tên gói ở đầu chương trình và lưu nó trong thư mục gói. Chúng ta cần một tệp java mới để xác định một lớp công khai, nếu không chúng ta có thể thêm lớp mới vào tệp .java hiện có và biên dịch lại nó.
+  </p>
+
+  <p>
+    Các gói con : Các gói bên trong một gói khác là các gói con . Chúng không được nhập theo mặc định, chúng phải được nhập rõ ràng. Ngoài ra, các thành viên của một gói con không có đặc quyền truy cập, tức là, chúng được coi là gói khác nhau đối với các chỉ định truy cập mặc định và được bảo vệ.
+  </p>
+
+  <p>
+    Dựa trên việc gói package được xác định bởi người dùng hay không, các gói package được chia thành hai loại:
+  </p>
+
+  <ul>
+    <li>Gói package được xây dựng sẵn (buit-in)
+</li><li>Gói package do người dùng xác định (defined)</li>
+  </ul>
+
+    <h2 id="5-lam-the-nao-de-truy-cap-goi-tu-goi-khac">
+      5. Làm thế nào để truy cập gói từ gói khác?
+    </h2>
+
+  <p>
+    Có ba cách để truy cập gói từ bên ngoài gói:&nbsp;
+  </p>
+
+  <p>
+    import package.*;Từ khóa import được sử dụng để làm cho các lớp và giao diện của một gói khác có thể truy cập được vào gói hiện tại.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/15/x.png" height="467" width="890" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/15/responsive/x-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/x-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/x-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/x-xl.png 1024w">
+      
+    </figure>
+
+  <p>
+    import package.classname;
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/15/y.png" height="491" width="898" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/15/responsive/y-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/y-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/y-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/y-xl.png 1024w">
+      
+    </figure>
+
+  <p>
+    fully qualified name.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/15/w.png" height="426" width="864" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/15/responsive/w-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/w-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/w-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/15/responsive/w-xl.png 1024w">
+      
+    </figure>
+
+    <h2 id="ket-luan">
+      Kết Luận
+    </h2>
+
+  <p>
+    Có thể nói Thư viện và package trong Java đóng vai trò rất quan trọng đối với lập trình viên. Khi lập trình viên biết tận dụng những điều đó sẽ làm cho việc code của mình trở nên dễ dàng và thuận lợi hơn.
+  </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>JAVA VS JAVASCRIPT</title>
+        <author>
+            <name>Dang Anh Vu</name>
+        </author>
+        <link href="https://danganhvu.github.io/MyBlog/java-vs-javascript.html"/>
+        <id>https://danganhvu.github.io/MyBlog/java-vs-javascript.html</id>
+        <media:content url="https://danganhvu.github.io/MyBlog/media/posts/14/Java-Vs-Java-script_651478a34e0c47d4a69edc895009688a.jpeg" medium="image" />
+            <category term="JavaScript"/>
+            <category term="Java"/>
+
+        <updated>2024-12-29T23:01:51+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://danganhvu.github.io/MyBlog/media/posts/14/Java-Vs-Java-script_651478a34e0c47d4a69edc895009688a.jpeg" alt="" />
+                    Java vs. Javascript: Đâu là ngôn ngữ dành cho bạn? Java và&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://danganhvu.github.io/MyBlog/media/posts/14/Java-Vs-Java-script_651478a34e0c47d4a69edc895009688a.jpeg" class="type:primaryImage" alt="" /></p>
+                
+    <h2 id="java-vs-javascript-dau-la-ngon-ngu-danh-cho-ban">
+      Java vs. Javascript: Đâu là ngôn ngữ dành cho bạn?
+    </h2>
+
+  <p>
+    Java và JavaScript là hai trong số những ngôn ngữ lập trình phổ biến nhất. Mặc dù cả hai đều có từ "Java" trong tên, chúng thực sự rất khác biệt.
+<br>
+<br>Như Brendan, một lập trình viên full-stack, chia sẻ, sự khác biệt của chúng cũng giống như sự khác biệt giữa bánh donut và Doritos. Cả hai đều là món ăn vặt, và cả hai đều bắt đầu bằng chữ "do", nhưng sự tương đồng dừng lại ở đó. Brendan tiếp tục giải thích những khác biệt về nguồn gốc, đặc trưng, ứng dụng và và nghề nghiệp liên quan của Java và JavaScript.
+<br>
+<br>Nếu bạn quan tâm tìm hiểu thêm về những khác biệt này - hoặc cố gắng xác định ngôn ngữ nào phù hợp nhất để học - hãy đọc thêm để tìm hiểu xem Java hay JavaScript sẽ phù hợp với bạn hơn nhé.
+  </p>
+
+    <h2 id="java-vs-javascript-lich-su-va-phat-trien">
+      Java vs. JavaScript: Lịch sử và phát triển
+    </h2>
+
+  <p>
+    Hãy bắt đầu từ những ngày đầu. Sun Microsystems phát hành Java lần đầu tiên vào năm 1996. Ban đầu, họ định sử dụng Java để tích hợp vào các thiết bị TV nhằm tăng tính tương tác, nhưng kế hoạch này đã không thành công. Thay vào đó, Java đã tìm được vị thế của mình trong server-side programming - những hoạt động chạy ngầm của các ứng dụng.
+<br>
+<br>Vào năm 1995, Netscape đã tạo ra một ngôn ngữ lập trình có tên là Mocha. Sau đó được đổi tên thành JavaScript, Mocha được thiết kế với sự đơn giản là chính. Giống như CSS, nó được nhúng vào HTML của trang web. Tuy nhiên, trong khi CSS thêm phong cách, thì JavaScript thêm tính tương tác.
+<br>
+<br>Sau đó, để đáp ứng sự phổ biến ngày càng tăng của Internet Explorer (đối thủ chính của Netscape), Netscape và Sun Microsystems đã ký kết một thỏa thuận. Netscape cho phép Sun chạy ứng dụng Java trên trình duyệt web, điều này giúp họ tận dụng được độ phổ biến của ngôn ngữ này. Đổi lại, Netscape đã đổi tên Mocha thành JavaScript.
+  </p>
+
+    <h2 id="java-va-javascript-su-khac-biet-va-ung-dung">
+      Java và JavaScript: Sự khác biệt và ứng dụng
+    </h2>
+
+  <p>
+    Bạn quan tâm học một ngôn ngữ lập trình mới và không chắc nên bắt đầu với Java hay JavaScript? Trong một cuộc thảo luận về chủ đề này, LeChuck chia sẻ:"Điều này hoàn toàn phụ thuộc vào những gì bạn muốn làm. Nói chung, nếu bạn muốn phát triển cho web thì hãy chọn JavaScript. Nếu bạn nghĩ rằng mình sẽ thích tạo ứng dụng Android, thì Java sẽ phù hợp hơn.<br>Bạn muốn sử dụng kiến thức lập trình của mình để làm gì? Trả lời câu hỏi này sẽ chỉ dẫn bạn đến các ngôn ngữ mà bạn muốn học..."
+  </p>
+
+  <p>
+    Cả Java và JavaScript đều được sử dụng rộng rãi trong ngành công nghệ. Bạn sẽ thấy Java được sử dụng bởi các công ty như Airbnb, Amazon và Meta; và JavaScript được sử dụng bởi LinkedIn, PayPal và Groupon. eBay, Google, Microsoft, Netflix và Uber sử dụng cả hai.
+  </p>
+
+  <p>
+    Trong phần này, chúng ta sẽ xem xét các ứng dụng của Java và JavaScript để giúp bạn xác định ngôn ngữ nào phù hợp với bạn nhất.
+  </p>
+
+    <h2 id="java">
+      Java
+    </h2>
+
+  <p>
+    Java là một ngôn ngữ lập trình có kiểu dữ liệu tĩnh, với cú pháp cứng nhắc khi khai báo biến. Với Java, bạn phải chỉ định rõ ràng kiểu dữ liệu mà bạn sẽ lưu trữ trong một biến cụ thể. Một khi bạn đã khai báo một biến với một kiểu dữ liệu nhất định (như String), nó phải giữ nguyên kiểu dữ liệu đó trong suốt vòng đời của nó.
+<br>
+<br>Java cũng là một ngôn ngữ lập trình hướng đối tượng. Các lớp (class) đóng vai trò là những mẫu thiết kế tái sử dụng để tạo ra các đối tượng (object). Các đối tượng là những cấu trúc dữ liệu được sử dụng để lưu trữ thông tin. Khi lập trình bằng Java, bạn sẽ sử dụng các lớp và đối tượng để mô hình hóa các tình huống trong thực tế vào trong mã code. Dưới đây là một ví dụ:
+  </p>
+<pre class="line-numbers  language-java"><code>public class CheeseCurls {
+  public static void main(String[] args) {
+    System.out.println("Here's a bag of Cheese curls");
+  }
+}</code></pre>
+
+  <p>
+    Như bạn thấy, Java đòi hỏi phải viết khá nhiều mã code, ngay cả cho một việc đơn giản như in ra dòng "Here's a bag of Cheese curls". Trước tiên, chúng ta khai báo lớp, được thể hiện qua dòng đầu tiên trong ví dụ trên. Bên trong lớp này, chúng ta tạo ra phương thức main, đây là một phương thức sẽ được call tự động khi chương trình chạy. Cuối cùng, chúng ta chỉ định những gì chúng ta muốn thực hiện.
+  </p>
+
+    <h2 id="uu-diem-va-ung-dung-cua-java">
+      Ưu điểm và ứng dụng của Java
+    </h2>
+
+  <p>
+    Nhờ khả năng tạo ra sự ổn định và quản lý dữ liệu, Java được sử dụng trong:
+  </p>
+
+  <ul>
+    <li>Các dự án quy mô lớn của các doanh nghiệp lớn trong các ngành tài chính, thương mại và ô tô
+</li><li>Phát triển ứng dụng Android
+</li><li>Phát triển back-end
+</li><li>Tính toán khoa học
+</li><li>Phần cứng và Internet of Things (ví dụ như Raspberry Pi, loa Sonos, tủ lạnh thông minh)</li>
+  </ul>
+
+  <p>
+    Java mất thời gian để học, nhưng nhu cầu, tính đa dạng và tiềm năng thu nhập của nó thể hiện rõ giá trị của nó. Bạn cũng sẽ thấy sự thỏa mãn khi xây dựng một dự án lớn từ đầu - đặc biệt là khi đó là mã code của chính bạn và nó chạy một cách suôn sẻ.
+<br>
+<br>Nếu bạn quan tâm đến khoa học máy tính hoặc thấy bản thân sẽ xây dựng những ứng dụng Android hot tiếp theo, học Java là một bước khởi đầu tuyệt vời.
+  </p>
+
+    <h2 id="javascript">
+      JavaScript
+    </h2>
+
+  <p>
+    Nếu bạn quan tâm đến việc xây dựng các trang web tương tác hoặc phát triển trò chơi, thì JavaScript có thể là lựa chọn tốt hơn cho bạn.
+<br>
+<br>JavaScript là một ngôn ngữ lập trình động, có cú pháp ít cứng nhắc hơn khi khai báo biến. Với JavaScript, bạn không cần phải chỉ định kiểu dữ liệu cho biến. Bạn cũng có thể gán lại các biến với các giá trị có kiểu dữ liệu khác nhau.
+<br>
+<br>Khác với Java, JavaScript dựa trên prototype và không bị ràng buộc vào một mẫu mã cụ thể. Các bản cập nhật gần đây của JavaScript đã cho phép xây dựng các class, nhưng việc này không phải là yêu cầu bắt buộc. Ví dụ:
+  </p>
+<pre class="line-numbers  language-javascript"><code>console.log("Here's a bag of Cheese curls");</code></pre>
+
+  <p>
+    Với JavaScript, bạn không cần phải thêm các class hoặc function - bạn chỉ cần viết những gì bạn muốn xảy ra trong một dòng.
+  </p>
+
+    <h2 id="diem-manh-va-ung-dung-cua-javascript">
+      Điểm mạnh và ứng dụng của JavaScript
+    </h2>
+
+  <p>
+    Do tính linh hoạt, JavaScript dễ xây dựng và triển khai hơn. Tuy nhiên, cấu trúc cứng nhắc của Java ít dễ bị lỗi hơn. Trong khi việc khởi chạy cần nhiều thời gian hơn, nhưng nó ổn định hơn.
+<br>
+<br>Được mệnh danh là "ngôn ngữ của web", JavaScript thống trị lĩnh vực phát triển web. Các ứng dụng của nó bao gồm phát triển giao diện người dùng (front-end) và các dự án web. Tuy nhiên, nhiều năm phát triển mã nguồn mở đã dẫn đến sự ra đời của rất nhiều thư viện và API mở rộng khả năng của JavaScript.
+<br>
+<br>Mặc dù ban đầu chỉ giới hạn trong trình duyệt web, nhưng với sự ra đời của Node.js framework, JavaScript cũng có thể được sử dụng cho phát triển back-end. Theo một cuộc khảo sát của Stack Overflow, hơn một nửa các nhà phát triển chuyên nghiệp sử dụng Node.js.
+<br>
+<br>Thậm chí ngay cả khi bạn không tìm kiếm một sự nghiệp mới, việc học lập trình vẫn có thể mang lại lợi ích cho vị trí hiện tại của bạn. Một trong những người học của chúng tôi đã chia sẻ rằng họ có thể xây dựng một script để cải thiện quản lý thời gian chỉ sau vài tuần học JavaScript.
+<br>
+<br>Ngôn ngữ biên dịch (Compiled) và ngôn ngữ thông dịch (Interpreted)
+<br>
+<br>Một sự khác biệt khác giữa Java và JavaScript nằm ở cách thức thực thi. JavaScript là một ngôn ngữ thông dịch, có nghĩa là nó cần một trình thông dịch để dịch và thực thi từng dòng mã. Các ngôn ngữ thông dịch có thể cung cấp nhiều tính linh hoạt hơn, chương trình của chúng thường nhỏ hơn và độc lập với nền tảng (có nghĩa là bạn có thể thực thi cùng một mã trên các hệ điều hành khác nhau).
+<br>
+<br>Các ngôn ngữ biên dịch có thể được dịch và thực thi trực tiếp bởi máy tính của bạn, điều này làm tăng tốc độ và hiệu quả; và chúng cung cấp nhiều quyền kiểm soát hơn đối với các thành phần phần cứng. Lưu ý rằng mặc dù là ngôn ngữ biên dịch, Java vẫn là ngôn ngữ độc lập với nền tảng nhờ vào Java Virtual Machine (JVM).
+  </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>KIỂU DỮ LIỆU JAVA</title>
+        <author>
+            <name>Dang Anh Vu</name>
+        </author>
+        <link href="https://danganhvu.github.io/MyBlog/kieu-du-lieu-java.html"/>
+        <id>https://danganhvu.github.io/MyBlog/kieu-du-lieu-java.html</id>
+        <media:content url="https://danganhvu.github.io/MyBlog/media/posts/12/Java-Data-Types.webp" medium="image" />
+            <category term="Java"/>
+
+        <updated>2024-12-29T22:45:49+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://danganhvu.github.io/MyBlog/media/posts/12/Java-Data-Types.webp" alt="" />
+                    Các kiểu dữ liệu trong Java Biến trên thực tế là bộ&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://danganhvu.github.io/MyBlog/media/posts/12/Java-Data-Types.webp" class="type:primaryImage" alt="" /></p>
+                
+    <h2 id="cac-kieu-du-lieu-trong-java">
+      Các kiểu dữ liệu trong Java
+    </h2>
+
+  <p>
+    Biến trên thực tế là bộ nhớ để lưu một giá trị nào đó. Khi khai báo biến tức là ta đang khai báo với hệ thống dành riêng không gian trong bộ nhớ. Dựa trên kiểu dữ liệu của một biến, hệ điều hành cấp phát bộ nhớ và quyết định cái gì có thể được lưu giữ trong bộ nhớ dành riêng đó.
+  </p>
+<div><h3>Primitive:</h3></div>
+
+  <ul>
+    <li>Boolean
+</li><li>Char
+</li><li>Byte
+</li><li>Short
+</li><li>Int
+</li><li>Long
+</li><li>Float
+</li><li>Double</li>
+  </ul>
+<div><h3>Non-primitive</h3></div>
+
+  <ul>
+    <li>String
+</li><li>Array ...</li>
+  </ul>
+<div><h2>Giá trị mặc định và bộ nhớ lưu trữ của các kiểu dữ liệu</h2></div>
+
+  <p>
+    Giá trị mặc định và bộ nhớ của mỗi kiểu dược tóm tắt ở bản sau đây:
+  </p>
+<div><table style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #000; text-align: left;">Kiểu dữ liệu</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #000; text-align: left;">Giá trị mặc định</th>
+            <th style="border: 1px solid #ddd; padding: 8px; background-color: #000; text-align: left;">Bộ nhớ</th>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 8px;">Boolean</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">False</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">1 bit</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 8px;">Char</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">'\u0000'</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">2 byte</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 8px;">Byte</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">0</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">1 byte</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 8px;">Short</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">0</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">2 byte</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 8px;">Int</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">0</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">4 byte</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 8px;">Long</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">0L</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">8 byte</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 8px;">Float</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">0.0f</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">4 byte</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid #ddd; padding: 8px;">Double</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">0.0d</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">8 byte</td>
+        </tr>
+    </table>
+</div>
+<div><h2>Kiểu Primitive</h2>
+</div>
+<div><h3>1. Boolean</h3></div>
+
+  <p>
+    Đây là kiểu dữ liệu có bộ nhớ lưu trữ nhỏ nhất, chỉ có 1 bit. Kiểu dữ liệu này được dùng để lưu trữ hai trạng thái true hoặc false Giá trị mặc định là false.
+  </p>
+<pre class="line-numbers  language-java"><code>boolean extractall = true</code></pre>
+<div><h3>2. Char</h3></div>
+
+  <p>
+    Kiểu dữ liệu này có thể dùng để lưu kí tự hoặc số nguyên không âm, có kích thước 2 byte. Giá trị nhỏ nhất là '\u0000' (hoặc 0) và giá trị lớn nhất là '\uffff' (hoặc 65,535).
+  </p>
+<pre class="line-numbers  language-javascript"><code> char name ='A'</code></pre>
+
+  <p>
+    Câu hỏi đặt ra là vì sao kiểu dữ liệu char có giá trị mặc định là '\u0000' và bộ nhớ là 2 byte? Lý do là vì Java sử dụng bảng mã Unicode. Trong Unicode mỗi ký tự giữ 2 byte, do đó Java cũng cấp cho kiểu dữ liệu char bộ nhớ 2 byte.
+  </p>
+<div><h3>Byte</h3></div>
+
+  <p>
+    Kiểu dữ liệu này dùng để lưu số nguyên (âm hoặc dương), có kích thước 1 byte. Giá trị nhỏ nhất là -128 (-2^7) và giá trị lớn nhất là 127 (2^7 -1) Giá trị mặc định là 0.
+  </p>
+<pre class="line-numbers  language-java"><code> byte x = 1 , byte y = -1</code></pre>
+<div><h3>4. Short</h3></div>
+
+  <p>
+    Dùng để lưu dữ liệu có kiểu số nguyên, nhưng kích cỡ lớn hơn byte. Bộ nhớ kiểu dữ liệu này là 2 byte. Giá trị nhỏ nhất là -32,768 (-2^15) và giá trị lớn nhất là 32,767 (2^15 -1) Giá trị mặc định là 0.
+  </p>
+<pre class="line-numbers  language-java"><code>short t = 50, short z = -50</code></pre>
+<div><h3>5. Int</h3></div>
+
+  <p>
+    Đây cũng là kiểu dữ liệu dùng để lưu kiểu số nguyên, kích cỡ 4 byte (lớn hơn byte và short). Giá trị nhỏ nhất là - 2,147,483,648.(-2^31) và giá trị lớn nhất là 2,147,483,647 (2^31 -1) Thông thường, int được sử dụng làm kiểu dữ liệu mặc định cho các giá trị nguyên. Giá trị mặc định là 0.
+  </p>
+<pre class="line-numbers  language-java"><code>int a = 500, int b = -500</code></pre>
+<div><h3>6. Long</h3></div>
+
+  <p>
+    Kiểu dữ liệu dùng để lưu số nguyên lớn nhất là Long. Kích cỡ của nó lên đến 8 byte. Giá trị nhỏ nhất là -9,223,372,036,854,775,808.(-2^63) và lớn nhất là 9,223,372,036,854,775,807 (2^63 -1) Kiểu này được sử dụng khi cần một dải giá trị rộng hơn int. Giá trị mặc định là 0L.
+  </p>
+<pre class="line-numbers  language-java"><code>long a = 100000L, int b = -100000L</code></pre>
+<div><h3>7. Float</h3></div>
+
+  <p>
+    Float là kiểu dữ liệu lưu số thực, kích cỡ 4 byte. Giá trị mặc định là 0.0f. Kiểu Float không bao giờ được sử dụng cho các giá trị chính xác như currency.
+  </p>
+<pre class="line-numbers  language-java"><code>float jpy = 22.2f</code></pre>
+<div><h3>8. Double</h3></div>
+
+  <p>
+    Double cũng là kiểu dữ liệu để lưu số thực, nhưng kích thước dữ liệu lớn hơn Float. Bộ nhớ của nó là 8 byte. Thông thường, kiểu dữ liệu này được sử dụng làm kiểu mặc định cho các giá trị decimal. Kiểu double cũng không bao giờ được sử dụng cho các giá trị chính xác như currency. Giá trị mặc định là 0.0d.
+  </p>
+<pre class="line-numbers  language-java"><code>double ct = 676.7</code></pre>
+<div><h2>Kiểu Non - Primitive</h2></div>
+
+  <p>
+    Trong Java tồn tại kiểu biến đối tượng, được tạo bằng cách sử dụng các constructor đã được định nghĩa của các class. Chúng được sử dụng để truy cập các đối tượng. Những biến này được khai báo ở kiểu cụ thể và không thể thay đổi được.
+  </p>
+
+  <p>
+    Giá trị mặc định của kiểu biến đối tượng là null. Có thể sử dụng biến đối tượng để tham chiếu tới bất kỳ đối tượng nào trong kiểu được khai báo hoặc bất kỳ kiểu tương thích nào.
+  </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>DOM JAVASCRIPT</title>
+        <author>
+            <name>Dang Anh Vu</name>
+        </author>
+        <link href="https://danganhvu.github.io/MyBlog/dom-javascript.html"/>
+        <id>https://danganhvu.github.io/MyBlog/dom-javascript.html</id>
+        <media:content url="https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi-2.png" medium="image" />
+            <category term="JavaScript"/>
+
+        <updated>2024-12-29T22:21:08+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi-2.png" alt="" />
+                    Tổng quan về DOM là gì DOM là gì? DOM (Document Object&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi-2.png" class="type:primaryImage" alt="" /></p>
+                
+    <h2 id="tong-quan-ve-dom-la-gi">
+      Tổng quan về DOM là gì
+    </h2>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi.png" height="1242" width="1200" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-xl.png 1024w">
+      
+    </figure>
+<div><h3>DOM là gì?</h3></div>
+
+  <p>
+    DOM (Document Object Model) là một chuẩn kỹ thuật được định nghĩa bởi W3C (World Wide Web Consortium) để biểu diễn cấu trúc cây của một tài liệu HTML hoặc XML. Nó cung cấp một giao diện độc lập ngôn ngữ và đa nền tảng để truy cập và thao tác các phần tử trong tài liệu.
+  </p>
+<div><h3>HTML DOM là gì?</h3>
+</div>
+
+  <p>
+    DOM xem tài liệu HTML hoặc XML như một cây, trong đó mỗi nút (node) đại diện cho một phần của tài liệu, chẳng hạn như thẻ HTML, văn bản, hoặc thuộc tính. Các nút được tổ chức theo cấu trúc phân cấp, trong đó các nút con được liên kết với nút cha của chúng. Điều này cho phép truy cập và thay đổi các phần tử trong tài liệu bằng cách sử dụng các phương thức và thuộc tính được cung cấp bởi DOM API.
+  </p>
+<div><h3>Cây cấu trúc DOM là gì?</h3>
+</div>
+<div><p>Cây cấu trúc <em>DOM là gì?</em> Đây là một mô hình dữ liệu mô tả cấu trúc của một trang web. Nó được sử dụng bởi trình duyệt web để hiển thị trang web. Cây cấu trúc DOM bao gồm các node, đại diện cho các phần tử HTML của trang web. Các node được liên kết với nhau bởi các mối quan hệ cha-con, anh em và anh em họ.</p></div>
+<div><h3>Node  </h3></div>
+
+  <p>
+    Node là một đơn vị dữ liệu trong cây cấu trúc DOM. Mỗi node đại diện cho một phần tử HTML của trang web. Có nhiều loại node khác nhau, bao gồm:
+  </p>
+
+  <ul>
+    <li>Node gốc: Node gốc là node đầu tiên trong cây cấu trúc DOM. Nó đại diện cho toàn bộ trang web.
+</li><li>Node phần tử: Node phần tử đại diện cho một phần tử HTML cụ thể, chẳng hạn như một thẻ <div> hoặc một thẻ <img.
+</div></li><li>Node văn bản: Node văn bản đại diện cho một đoạn văn bản.
+</li><li>Node thuộc tính (attribute node) 
+</li><li>Node chú thích (comment node).</li>
+  </ul>
+<div><h3>Quan hệ giữa các node – DOM là gì?</h3></div>
+
+  <p>
+    Node gốc (document): chính là node đầu tiên.
+<br>Tất cả các node nếu không phải là node gốc đều chỉ có 1 node cha (parent).
+<br>Một node có thể có một hoặc nhiều con, hoặc cũng có thể không có con nào.
+<br>Những node có cùng node cha sẽ được gọi là các node anh em với nhau (siblings).
+<br>Trong các node anh em thì node đầu tiên được gọi là con cả (firstChild) và node cuối cùng sẽ gọi là con út (lastChild).
+  </p>
+
+    <h2 id="cac-loai-dom-trong-javascript">
+      Các loại DOM trong Javascript
+    </h2>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi-1.png" height="655" width="1182" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-1-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-1-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-1-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-1-xl.png 1024w">
+      
+    </figure>
+
+  <p>
+    Tất cả nội dung có thể được cập nhật thông qua các thuộc tính và phương thức của DOM là gì. Từ thay đổi định dạng chữ, nội dung chữ đến thay đổi cấu trúc các node và thêm node mới như thế nào.
+  </p>
+<div><h3>Các Thuộc tính và Phương thức thường gặp trong DOM là gì?</h3></div>
+<div><h4>Thuộc tính</h4></div>
+
+  <ul>
+    <li>id: Định danh duy nhất cho mỗi phần tử.</li><li>className: Tên lớp, có thể dùng cho nhiều phần tử.</li><li>tagName: Tên thẻ HTML.</li><li>innerHTML: Trả về mã HTML ở bên trong phần tử hiện tại.</li><li>outerHTML: Trả về mã HTML ở trong phần tử hiện tại.</li><li>textContent: Trả về nội dung của tất cả node văn bản ở bên trong phần tử hiện tại.</li><li>attributes: Tập các thuộc tính quen thuộc như id, name, class, href, title…</li><li>style: Tập các định dạng ở trong phần tử hiện tại.</li><li>value: Lấy giá trị của thành phần được chọn thành một biến.</li>
+  </ul>
+<div><h4>Phương thức DOM là gì?</h4></div>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi-2.jpg" height="400" width="900" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-2-xs.jpg 320w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-2-sm.jpg 480w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-2-md.jpg 768w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-2-xl.jpg 1024w">
+      
+    </figure>
+
+  <ul>
+    <li>getElementById(id)
+</li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">getElementsByTagName(tagname)</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">getElementsByName(name)</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">getAttribute(attributeName)</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">setAttribute(attributeName, value)</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">appendChild(node)</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">removeChild(node)</span><br></li>
+  </ul>
+<div><h4>Thuộc tính quan hệ DOM là gì?</h4></div>
+
+  <ul>
+    <li>parentNode: là node cha</li><li>childNodes: là các node con</li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">firstChild: là node con đầu tiên</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">lastChild: là node con cuối cùng</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">nextSibling: là node anh em liền kề sau</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">previousSibling: là node anh em liền kề trước</span><br></li>
+  </ul>
+
+    <h2 id="truy-xuat-cac-phan-tu-trong-mo-hinh-dom-la-gi">
+      Truy xuất các phần tử trong mô hình DOM là gì
+    </h2>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi-3.jpg" height="395" width="626" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-3-xs.jpg 320w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-3-sm.jpg 480w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-3-md.jpg 768w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-3-xl.jpg 1024w">
+      
+    </figure>
+
+  <p>
+    Bạn hãy truy xuất mọi phần tử html bằng cách sử dụng các phương thức :
+  </p>
+
+  <ul>
+    <li>document.getElementById()
+</li><li>document.getElementsByTagName()
+</li><li>document.getElementsByClass()</li>
+  </ul>
+<pre class="line-numbers  language-html"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=“utf-8”&gt;
+    &lt;title&gt;DOM&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 id=“txt1”&gt;Truy xuất bằng id&lt;/h1&gt;
+    &lt;script type=“text/javascript”&gt;
+        var x = document.getElementById(‘txt1’);
+        // Truy xuất thẻ h1 có id ‘txt1’
+        x.innerHTML = “Thay đổi”;
+        //Thay đổi nội dung của thẻ h1
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+  <p>
+    ở ví dụ trên mình đã truy xuất và thay đổi nội dung của thẻ h1 bằng phương thức document.getElementById().
+  </p>
+<pre class="line-numbers  language-html"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=“utf-8”&gt;
+  &lt;title&gt;DOM&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+      &lt;h1 id=“txt1”&gt;Truy xuất bằng TagName&lt;/h1&gt;
+      &lt;script type=“text/javascript”&gt;
+        var x = document.getElementsByTagName(‘h1’);
+        //Truy xuất các thẻ chứa TagName là h1
+        x[0].innerHTML = ‘Thay đổi’;
+        //Thay đổi nội dung ở thẻ h1 đầu tiên trong html
+      &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+  <p>
+    ở ví dụ này đã truy xuất và thay đổi nội dung của thẻ h1 bằng yếu tố document.
+<br>
+<br>getElementsByTagName().
+  </p>
+<div><h5>Chú ý:<h5>
+</div>
+
+  <ul>
+    <li>Truy xuất bằng cú pháp document.getElementById() giá trị trả về chính là phần tử có id đó.
+</li><li>Truy xuất bằng document.getElementsByTagName() hoặc document.getElementsByClass() giá trị trả về sẽ là một mảng, vậy nên ta cần truy xuất phần tử của mảng để xác định được phần tử mong muốn.</li>
+  </ul>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>KIỂU DỮ LIỆU TRONG JAVASCRIPT</title>
+        <author>
+            <name>Dang Anh Vu</name>
+        </author>
+        <link href="https://danganhvu.github.io/MyBlog/kieu-du-lieu-trong-javascript.html"/>
+        <id>https://danganhvu.github.io/MyBlog/kieu-du-lieu-trong-javascript.html</id>
+        <media:content url="https://danganhvu.github.io/MyBlog/media/posts/9/datatypejs-2.webp" medium="image" />
+            <category term="JavaScript"/>
+
+        <updated>2024-12-29T21:13:01+07:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://danganhvu.github.io/MyBlog/media/posts/9/datatypejs-2.webp" alt="" />
+                    A. Data types Trong JS có 6 kiểu dữ liệu cơ bản:&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://danganhvu.github.io/MyBlog/media/posts/9/datatypejs-2.webp" class="type:primaryImage" alt="" /></p>
+                
+    <h2 id="a-data-types">
+      A. Data types
+    </h2>
+
+  <p>
+    Trong JS có 6 kiểu dữ liệu cơ bản:
+  </p>
+
+  <ul>
+    <li>Number
+</li><li>Boolean
+</li><li>String
+</li><li>Null
+</li><li>Undefined
+</li><li>Object</li>
+  </ul>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/9/datatypejs.webp" height="615" width="612" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/9/responsive/datatypejs-xs.webp 320w ,https://danganhvu.github.io/MyBlog/media/posts/9/responsive/datatypejs-sm.webp 480w ,https://danganhvu.github.io/MyBlog/media/posts/9/responsive/datatypejs-md.webp 768w ,https://danganhvu.github.io/MyBlog/media/posts/9/responsive/datatypejs-xl.webp 1024w">
+      
+    </figure>
+
+  <p>
+    Mặc dù JS là ngôn ngữ weak type, không có nghĩa là nó không có khái niệm kiểu dữ liệu. JS chỉ không phải chỉ định rõ ràng kiểu và có khả năng ép kiểu linh hoạt, nên nó được gọi là weak typing (kiểu yếu).
+  </p>
+<div><h3>Primitive types</h3></div>
+
+  <p>
+    Trong 6 kiểu trên, 5 kiểu đầu còn được gọi là primitive types (kiểu nguyên thủy), và kiểu object là non-primitive. Kiểu nguyên thủy chỉ thuần chứa dữ liệu.
+  </p>
+<pre class="line-numbers  language-javascript"><code>let x = 10;
+let s = "Hello";
+let z = true;</code></pre>
+
+  <p>
+    Và các kiểu primitive cũng có thể có method và property như object, nhưng thực sự không phải. Đó là trick của JS, khi chúng ta dùng tới bất kì property hoặc method nào, JS sẽ biến đối tượng primitive thành một wrapper. Wrapper là kiểu primitive, được gói thành một object và sử dụng như object, do đó nó có thuộc tính và phương thức.
+  </p>
+<pre class="line-numbers  language-javascript"><code>let x = new Number(10);
+let s = new String("Hello");
+let z = new Boolean(true);
+</code></pre>
+
+  <p>
+    Tuy nhiên, không nên sử dụng dạng như trên. Nó vừa gây rối code, vừa dài dòng không cần thiết, lại vừa sinh ra một số vấn đề khác. Ví dụ như phép so sánh hai kiểu wrapper sẽ luôn trả về false, vì JS không so sánh value chứa bên trong. Nếu bạn không hiểu rõ, bạn sẽ gặp lỗi. Do đó, primitive thì cứ dùng như bình thường thôi.
+<br>
+<br>Và đối với wrapper, có thể dùng method valueOf() để lấy ra nội dung primitive được gói bên trong.
+  </p>
+<div><h3>Object types</h3></div>
+
+  <p>
+    Kiểu dữ liệu còn lại là object, có thể chứa thuộc tính (property) và phương thức (method). Object phải được khởi tạo bằng từ khóa new và Object constructor.
+  </p>
+<pre class="line-numbers  language-javascript"><code>let obj = new Object();
+...
+</code></pre>
+
+  <p>
+    Các phiên bản JS mới hơn cho phép sử dụng cú pháp dấu ngoặc {} để tạo object gọn gàng hơn.
+  </p>
+<pre class="line-numbers  language-javascript"><code>let obj = {
+    ...
+}
+</code></pre>
+
+  <p>
+    Từ kiểu object, có thể phát sinh thêm nhiều kiểu object khác, như mảng (array) cũng là object, function cũng là object (mặc dù tên kiểu là function), Date cũng là object,...
+  </p>
+            ]]>
+        </content>
+    </entry>
+</feed>

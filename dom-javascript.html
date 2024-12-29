@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>DOM JAVASCRIPT - VU&#x27;S BLOG </title>
+        <meta name="description" content="Tổng quan về DOM là gì DOM là gì? DOM (Document Object&hellip;" />
+        
+        <meta name="generator" content="Publii Open-Source CMS for Static Site" />
+
+        <link rel="canonical" href="https://danganhvu.github.io/MyBlog/dom-javascript.html">
+        <link rel="alternate" type="application/atom+xml" href="https://danganhvu.github.io/MyBlog/feed.xml" />
+<link rel="alternate" type="application/json" href="https://danganhvu.github.io/MyBlog/feed.json" />
+
+        <meta property="og:title" content="DOM JAVASCRIPT" /><meta property="og:image" content="https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi-2.png"/><meta property="og:image:width" content="1200" /><meta property="og:image:height" content="1242" /><meta property="og:site_name" content="VU'S BLOG" /><meta property="og:description" content="Tổng quan về DOM là gì DOM là gì? DOM (Document Object&hellip;" /><meta property="og:url" content="https://danganhvu.github.io/MyBlog/dom-javascript.html" /><meta property="og:type" content="article" />
+           <link rel="preload" href="https://danganhvu.github.io/MyBlog/assets/dynamic/fonts/publicsans/publicsans.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="https://danganhvu.github.io/MyBlog/assets/css/style.css?v=f3255e888ee4af56f3e8437a2c4c99f3">
+        <script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://danganhvu.github.io/MyBlog/dom-javascript.html"},"headline":"DOM JAVASCRIPT","datePublished":"2024-12-29T22:21+07:00","dateModified":"2024-12-29T22:30+07:00","image":{"@type":"ImageObject","url":"https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi-2.png","height":1242,"width":1200},"description":"Tổng quan về DOM là gì DOM là gì? DOM (Document Object&hellip;","author":{"@type":"Person","name":"Dang Anh Vu","url":"https://danganhvu.github.io/MyBlog/authors/dang-anh-vu/"},"publisher":{"@type":"Organization","name":"Dang Anh Vu","logo":{"@type":"ImageObject","url":"https://danganhvu.github.io/MyBlog/media/website/logo.jpg","height":980,"width":980}}}</script>      
+        <noscript>
+            <style>
+                img[loading] {
+                    opacity: 1;
+                }
+            </style>
+        </noscript>	    
+        
+    </head>
+    <body class="post-template">
+        
+        <div class="container">
+<div class="left-bar">
+   <div class="left-bar__inner">
+      <header class="header">
+         <a class="logo" href="https://danganhvu.github.io/MyBlog/">
+               <img src="https://danganhvu.github.io/MyBlog/media/website/logo.jpg" alt="VU&#x27;S BLOG" width="980" height="980">
+         </a>
+
+            <nav class="navbar"> 
+               <button
+                  class="navbar__toggle"
+                  aria-label="Menu"
+                  aria-haspopup="true"
+                  aria-expanded="false">
+                  <span class="navbar__toggle__box">
+                     <span class="navbar__toggle__inner">Menu</span>
+                  </span>
+               </button>
+               
+               <ul class="navbar__menu">
+                     <li >
+                           <a
+                              href="https://danganhvu.github.io/MyBlog/"
+                                    target="_self"
+                              aria-label="Home">
+                              
+                              <span>Home</span>
+                           </a>
+                     </li>
+                     <li >
+                           <a
+                              href="https://danganhvu.github.io/MyBlog/post.html"
+                                    target="_self"
+                              aria-label="Post">
+                              
+                              <span>Post</span>
+                           </a>
+                     </li>
+                     <li >
+                           <a
+                              href="https://danganhvu.github.io/MyBlog/my-profile.html"
+                                    target="_self"
+                              aria-label="My Profile">
+                              
+                              <span>My Profile</span>
+                           </a>
+                     </li>
+               </ul>
+            </nav>
+         <a class="logo logo--atbottom" href="https://danganhvu.github.io/MyBlog/">
+               <img src="https://danganhvu.github.io/MyBlog/media/website/logo.jpg" alt="VU&#x27;S BLOG" width="980" height="980">
+         </a>
+      </header>
+   </div>
+</div><main class="main post">
+      <article class="content">
+               <figure class="content__featured-image content__featured-image--attop">
+                  <img
+                     src="https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi-2.png"
+                        srcset="https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-2-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-2-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-2-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-2-xl.png 1024w" sizes="(min-width: 1460px) 938px, (min-width: 1200px) calc(75.83vw - 154px), (min-width: 1120px) 938px, (min-width: 900px) calc(55vw + 333px), 100vw"
+                      loading="eager"
+                     height="1242"
+                     width="1200"
+                     alt=""
+                     aria-describedby="image-caption">
+               </figure>
+
+            <div class="content__meta content__meta--attop">
+               <div class="content__meta--attop__inner">
+                  <div class="content__maintag">
+                     <svg width="20" height="20" aria-hidden="true" focusable="false">
+                        <use xlink:href="https://danganhvu.github.io/MyBlog/assets/svg/svg-map.svg#tag" />
+                     </svg>
+                     Published in <a href="https://danganhvu.github.io/MyBlog/tags/javascript/" class="metadata__maintag">JavaScript</a>
+                  </div>
+
+               </div>
+            </div>
+
+         <div class="main__inner">
+
+               <div class="content__meta">
+                  
+                     <div class="content__author">
+                           <div>
+                              <a href="https://danganhvu.github.io/MyBlog/authors/dang-anh-vu/" class="content__author__name">Dang Anh Vu</a>
+                           </div>
+                     </div>
+
+                     <div class="content__date">
+                        <time datetime="2024-12-29T22:21">
+                              Dec 29, 2024
+                        </time>
+                     </div>
+
+               </div>
+             
+            <header class="content__header">
+               <h1 class="content__title">DOM JAVASCRIPT</h1>
+            </header>
+
+            <div class="content__entry">
+               
+    <h2 id="tong-quan-ve-dom-la-gi">
+      Tổng quan về DOM là gì
+    </h2>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi.png" height="1242" width="1200" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-xl.png 1024w">
+      
+    </figure>
+<div><h3>DOM là gì?</h3></div>
+
+  <p>
+    DOM (Document Object Model) là một chuẩn kỹ thuật được định nghĩa bởi W3C (World Wide Web Consortium) để biểu diễn cấu trúc cây của một tài liệu HTML hoặc XML. Nó cung cấp một giao diện độc lập ngôn ngữ và đa nền tảng để truy cập và thao tác các phần tử trong tài liệu.
+  </p>
+<div><h3>HTML DOM là gì?</h3>
+</div>
+
+  <p>
+    DOM xem tài liệu HTML hoặc XML như một cây, trong đó mỗi nút (node) đại diện cho một phần của tài liệu, chẳng hạn như thẻ HTML, văn bản, hoặc thuộc tính. Các nút được tổ chức theo cấu trúc phân cấp, trong đó các nút con được liên kết với nút cha của chúng. Điều này cho phép truy cập và thay đổi các phần tử trong tài liệu bằng cách sử dụng các phương thức và thuộc tính được cung cấp bởi DOM API.
+  </p>
+<div><h3>Cây cấu trúc DOM là gì?</h3>
+</div>
+<div><p>Cây cấu trúc <em>DOM là gì?</em> Đây là một mô hình dữ liệu mô tả cấu trúc của một trang web. Nó được sử dụng bởi trình duyệt web để hiển thị trang web. Cây cấu trúc DOM bao gồm các node, đại diện cho các phần tử HTML của trang web. Các node được liên kết với nhau bởi các mối quan hệ cha-con, anh em và anh em họ.</p></div>
+<div><h3>Node  </h3></div>
+
+  <p>
+    Node là một đơn vị dữ liệu trong cây cấu trúc DOM. Mỗi node đại diện cho một phần tử HTML của trang web. Có nhiều loại node khác nhau, bao gồm:
+  </p>
+
+  <ul>
+    <li>Node gốc: Node gốc là node đầu tiên trong cây cấu trúc DOM. Nó đại diện cho toàn bộ trang web.
+</li><li>Node phần tử: Node phần tử đại diện cho một phần tử HTML cụ thể, chẳng hạn như một thẻ <div> hoặc một thẻ <img.
+</div></li><li>Node văn bản: Node văn bản đại diện cho một đoạn văn bản.
+</li><li>Node thuộc tính (attribute node) 
+</li><li>Node chú thích (comment node).</li>
+  </ul>
+<div><h3>Quan hệ giữa các node – DOM là gì?</h3></div>
+
+  <p>
+    Node gốc (document): chính là node đầu tiên.
+<br>Tất cả các node nếu không phải là node gốc đều chỉ có 1 node cha (parent).
+<br>Một node có thể có một hoặc nhiều con, hoặc cũng có thể không có con nào.
+<br>Những node có cùng node cha sẽ được gọi là các node anh em với nhau (siblings).
+<br>Trong các node anh em thì node đầu tiên được gọi là con cả (firstChild) và node cuối cùng sẽ gọi là con út (lastChild).
+  </p>
+
+    <h2 id="cac-loai-dom-trong-javascript">
+      Các loại DOM trong Javascript
+    </h2>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi-1.png" height="655" width="1182" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-1-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-1-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-1-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-1-xl.png 1024w">
+      
+    </figure>
+
+  <p>
+    Tất cả nội dung có thể được cập nhật thông qua các thuộc tính và phương thức của DOM là gì. Từ thay đổi định dạng chữ, nội dung chữ đến thay đổi cấu trúc các node và thêm node mới như thế nào.
+  </p>
+<div><h3>Các Thuộc tính và Phương thức thường gặp trong DOM là gì?</h3></div>
+<div><h4>Thuộc tính</h4></div>
+
+  <ul>
+    <li>id: Định danh duy nhất cho mỗi phần tử.</li><li>className: Tên lớp, có thể dùng cho nhiều phần tử.</li><li>tagName: Tên thẻ HTML.</li><li>innerHTML: Trả về mã HTML ở bên trong phần tử hiện tại.</li><li>outerHTML: Trả về mã HTML ở trong phần tử hiện tại.</li><li>textContent: Trả về nội dung của tất cả node văn bản ở bên trong phần tử hiện tại.</li><li>attributes: Tập các thuộc tính quen thuộc như id, name, class, href, title…</li><li>style: Tập các định dạng ở trong phần tử hiện tại.</li><li>value: Lấy giá trị của thành phần được chọn thành một biến.</li>
+  </ul>
+<div><h4>Phương thức DOM là gì?</h4></div>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi-2.jpg" height="400" width="900" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-2-xs.jpg 320w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-2-sm.jpg 480w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-2-md.jpg 768w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-2-xl.jpg 1024w">
+      
+    </figure>
+
+  <ul>
+    <li>getElementById(id)
+</li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">getElementsByTagName(tagname)</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">getElementsByName(name)</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">getAttribute(attributeName)</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">setAttribute(attributeName, value)</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">appendChild(node)</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">removeChild(node)</span><br></li>
+  </ul>
+<div><h4>Thuộc tính quan hệ DOM là gì?</h4></div>
+
+  <ul>
+    <li>parentNode: là node cha</li><li>childNodes: là các node con</li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">firstChild: là node con đầu tiên</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">lastChild: là node con cuối cùng</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">nextSibling: là node anh em liền kề sau</span><br></li><li><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: 1em; font-weight: var(--font-weight-normal);">previousSibling: là node anh em liền kề trước</span><br></li>
+  </ul>
+
+    <h2 id="truy-xuat-cac-phan-tu-trong-mo-hinh-dom-la-gi">
+      Truy xuất các phần tử trong mô hình DOM là gì
+    </h2>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/11/dom-la-gi-3.jpg" height="395" width="626" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-3-xs.jpg 320w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-3-sm.jpg 480w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-3-md.jpg 768w ,https://danganhvu.github.io/MyBlog/media/posts/11/responsive/dom-la-gi-3-xl.jpg 1024w">
+      
+    </figure>
+
+  <p>
+    Bạn hãy truy xuất mọi phần tử html bằng cách sử dụng các phương thức :
+  </p>
+
+  <ul>
+    <li>document.getElementById()
+</li><li>document.getElementsByTagName()
+</li><li>document.getElementsByClass()</li>
+  </ul>
+<pre class="line-numbers  language-html"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=“utf-8”&gt;
+    &lt;title&gt;DOM&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1 id=“txt1”&gt;Truy xuất bằng id&lt;/h1&gt;
+    &lt;script type=“text/javascript”&gt;
+        var x = document.getElementById(‘txt1’);
+        // Truy xuất thẻ h1 có id ‘txt1’
+        x.innerHTML = “Thay đổi”;
+        //Thay đổi nội dung của thẻ h1
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+  <p>
+    ở ví dụ trên mình đã truy xuất và thay đổi nội dung của thẻ h1 bằng phương thức document.getElementById().
+  </p>
+<pre class="line-numbers  language-html"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=“utf-8”&gt;
+  &lt;title&gt;DOM&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+      &lt;h1 id=“txt1”&gt;Truy xuất bằng TagName&lt;/h1&gt;
+      &lt;script type=“text/javascript”&gt;
+        var x = document.getElementsByTagName(‘h1’);
+        //Truy xuất các thẻ chứa TagName là h1
+        x[0].innerHTML = ‘Thay đổi’;
+        //Thay đổi nội dung ở thẻ h1 đầu tiên trong html
+      &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+  <p>
+    ở ví dụ này đã truy xuất và thay đổi nội dung của thẻ h1 bằng yếu tố document.
+<br>
+<br>getElementsByTagName().
+  </p>
+<div><h5>Chú ý:<h5>
+</div>
+
+  <ul>
+    <li>Truy xuất bằng cú pháp document.getElementById() giá trị trả về chính là phần tử có id đó.
+</li><li>Truy xuất bằng document.getElementsByTagName() hoặc document.getElementsByClass() giá trị trả về sẽ là một mảng, vậy nên ta cần truy xuất phần tử của mảng để xác định được phần tử mong muốn.</li>
+  </ul>
+            </div>     
+
+               <footer class="content__footer">
+
+                     <div class="content__last-updated">
+                        This article was updated on
+                        <time datetime="2024-12-29T22:30">
+                              Dec 29, 2024
+                        </time>
+                     </div>
+
+                        <div class="content__share">
+                              <a
+                                 href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdanganhvu.github.io%2FMyBlog%2Fdom-javascript.html"
+                                 class="js-share facebook tltp tltp--top"
+                                 aria-label="Facebook"
+                                 rel="nofollow noopener noreferrer">
+                                 <svg>
+                                    <use xlink:href="https://danganhvu.github.io/MyBlog/assets/svg/svg-map.svg#facebook"/>
+                                 </svg>
+                                 <span>Facebook</span>
+                              </a>
+                           
+                           
+                              <a
+                                 href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fdanganhvu.github.io%2FMyBlog%2Fdom-javascript.html&amp;media=https%3A%2F%2Fdanganhvu.github.io%2FMyBlog%2Fmedia%2Fposts%2F11%2Fdom-la-gi-2.png&amp;description=DOM%20JAVASCRIPT"
+                                 class="js-share pinterest tltp tltp--top"
+                                 aria-label="Pinterest"
+                                 rel="nofollow noopener noreferrer">
+                                 <svg>
+                                    <use xlink:href="https://danganhvu.github.io/MyBlog/assets/svg/svg-map.svg#pinterest"/>
+                                 </svg>
+                                 <span>Pinterest</span>
+                              </a>
+                           
+                           
+                           
+                           
+                        </div>
+
+               </footer>
+
+         </div>
+      </article>
+
+            <div class="content__section post__related">
+               <div class="main__inner">
+                  <h3 class="content__section__title">Related post</h3>
+                  <div class="post__related__wrap">
+                        <article class="c-card">
+                           <div class="c-card__meta">
+                              <div class="c-card__author">
+                                    <a href="https://danganhvu.github.io/MyBlog/authors/dang-anh-vu/">Dang Anh Vu</a>
+                              </div>
+
+                              <time datetime="2024-12-30T00:07">
+                                    Dec 30, 2024
+                              </time>
+
+                                 <a href="https://danganhvu.github.io/MyBlog/tags/javascript/" class="c-card-tag">JavaScript</a>
+                           </div>
+            
+                                 <a href="https://danganhvu.github.io/MyBlog/bien-kieu-let-va-var-toan-tap-trong-javascript.html" class="c-card__image">
+                                    <img
+                                       src="https://danganhvu.github.io/MyBlog/media/posts/17/bien-kieu-let-va-var-trong-javascript-63731631485.4858.jpg"
+                                          srcset="https://danganhvu.github.io/MyBlog/media/posts/17/responsive/bien-kieu-let-va-var-trong-javascript-63731631485.4858-xs.jpg 320w ,https://danganhvu.github.io/MyBlog/media/posts/17/responsive/bien-kieu-let-va-var-trong-javascript-63731631485.4858-sm.jpg 480w" sizes="(min-width: 700px) 200px, (min-width: 480px) 160px, calc(100vw - 50px)"
+                                        loading="lazy"
+                                       height="415"
+                                       width="716"
+                                       alt="">
+                                 </a>
+
+                           <header class="c-card__header">
+                              <h2 class="c-card__title">
+                                 <a href="https://danganhvu.github.io/MyBlog/bien-kieu-let-va-var-toan-tap-trong-javascript.html">BIẾN KIỂU LET VÀ VAR TOÀN TẬP TRONG JAVASCRIPT</a>
+                              </h2>
+                                 <p>Một trong những tính năng nổi bật của ECMAScript 2015 đó là&hellip;</p>
+                           </header>
+                        </article>
+                        <article class="c-card">
+                           <div class="c-card__meta">
+                              <div class="c-card__author">
+                                    <a href="https://danganhvu.github.io/MyBlog/authors/dang-anh-vu/">Dang Anh Vu</a>
+                              </div>
+
+                              <time datetime="2024-12-29T23:27">
+                                    Dec 29, 2024
+                              </time>
+
+                                 <a href="https://danganhvu.github.io/MyBlog/tags/javascript/" class="c-card-tag">JavaScript</a>
+                           </div>
+            
+                                 <a href="https://danganhvu.github.io/MyBlog/object-javascript-va-nhung-dieu-ban-can-biet.html" class="c-card__image">
+                                    <img
+                                       src="https://danganhvu.github.io/MyBlog/media/posts/16/object-javascript-63732666884.2419.jpg"
+                                          srcset="https://danganhvu.github.io/MyBlog/media/posts/16/responsive/object-javascript-63732666884.2419-xs.jpg 320w ,https://danganhvu.github.io/MyBlog/media/posts/16/responsive/object-javascript-63732666884.2419-sm.jpg 480w" sizes="(min-width: 700px) 200px, (min-width: 480px) 160px, calc(100vw - 50px)"
+                                        loading="lazy"
+                                       height="460"
+                                       width="817"
+                                       alt="">
+                                 </a>
+
+                           <header class="c-card__header">
+                              <h2 class="c-card__title">
+                                 <a href="https://danganhvu.github.io/MyBlog/object-javascript-va-nhung-dieu-ban-can-biet.html">OBJECT JAVASCRIPT VÀ NHỮNG ĐIỀU BẠN CẦN BIẾT</a>
+                              </h2>
+                                 <p>Như các bạn đã biết, Javascript có 5 kiểu dữ liệu Number,&hellip;</p>
+                           </header>
+                        </article>
+                  </div>
+               </div>
+            </div>
+
+         <div class="content__section content__comments">
+				 <div class="main__inner">
+               
+             </div>
+			</div>
+
+
+
+</main>
+   <div class="right-bar">
+      <div class="right-bar__inner">
+         <div class="sidebar">
+
+               <section class="box authors">
+                  <h3 class="box__title">Authors</h3>
+                  <ul class="authors__cotainer">
+                           <li class="authors__item">
+                              <div>
+                                 <a href="https://danganhvu.github.io/MyBlog/authors/dang-anh-vu/" class="authors__title">Dang Anh Vu</a>
+                                    <span class="authors__meta">Post:  9</span>
+                              </div>
+                           </li>
+                  </ul>
+               </section>
+
+                  <section class="box tags">
+                     <h3 class="box__title">Recommended Topics</h3>
+                     <ul class="tags__list">
+                              <li class="tags__item">
+                                 <a href="https://danganhvu.github.io/MyBlog/tags/java/" class="btn btn--gray">Java
+                                       <sup>(5)</sup>
+                                 </a>
+                              </li>
+                              <li class="tags__item">
+                                 <a href="https://danganhvu.github.io/MyBlog/tags/javascript/" class="btn btn--gray">JavaScript
+                                       <sup>(5)</sup>
+                                 </a>
+                              </li>
+                     </ul>
+                  </section>
+
+
+               <section class="box newsletter">
+                  <h3 class="box__title">Subscribe to Mono</h3>
+                  <p class="newsletter__desc">Sign up to receive email updates and to hear what's going on with us!</p>
+                  <form>...
+               </section>
+         
+
+               <div class="box copyright">
+                  Powered by Publii - Open-Source CMS for Static Websites
+               </div>
+
+         </div>
+      </div>
+   </div>
+</div>
+
+<script defer src="https://danganhvu.github.io/MyBlog/assets/js/scripts.min.js?v=b2d91bcadbf5db401b76eb5bb3092eb7"></script>
+
+    <script>        
+        var images = document.querySelectorAll('img[loading]');
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+                images[i].classList.add('is-loaded');
+            } else {
+                images[i].addEventListener('load', function () {
+                    this.classList.add('is-loaded');
+                }, false);
+            }
+        }
+    </script>
+
+
+
+
+</body>
+</html>

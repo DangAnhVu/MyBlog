@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>BẠN ĐÃ PHÂN BIỆT ĐƯỢC OVERRIDING VÀ OVERLOADING? - VU&#x27;S BLOG </title>
+        <meta name="description" content="Overloading (Nạp chồng phương thức) và Overriding (ghi đè phương thức) là&hellip;" />
+        
+        <meta name="generator" content="Publii Open-Source CMS for Static Site" />
+
+        <link rel="canonical" href="https://danganhvu.github.io/MyBlog/ban-da-phan-biet-duoc-overriding-va-overloading.html">
+        <link rel="alternate" type="application/atom+xml" href="https://danganhvu.github.io/MyBlog/feed.xml" />
+<link rel="alternate" type="application/json" href="https://danganhvu.github.io/MyBlog/feed.json" />
+
+        <meta property="og:title" content="BẠN ĐÃ PHÂN BIỆT ĐƯỢC OVERRIDING VÀ OVERLOADING?" /><meta property="og:image" content="https://danganhvu.github.io/MyBlog/media/posts/19/overiding-va-overloading-63739896651.9348.jpg"/><meta property="og:image:width" content="813" /><meta property="og:image:height" content="451" /><meta property="og:site_name" content="VU'S BLOG" /><meta property="og:description" content="Overloading (Nạp chồng phương thức) và Overriding (ghi đè phương thức) là&hellip;" /><meta property="og:url" content="https://danganhvu.github.io/MyBlog/ban-da-phan-biet-duoc-overriding-va-overloading.html" /><meta property="og:type" content="article" />
+           <link rel="preload" href="https://danganhvu.github.io/MyBlog/assets/dynamic/fonts/publicsans/publicsans.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="stylesheet" href="https://danganhvu.github.io/MyBlog/assets/css/style.css?v=f3255e888ee4af56f3e8437a2c4c99f3">
+        <script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://danganhvu.github.io/MyBlog/ban-da-phan-biet-duoc-overriding-va-overloading.html"},"headline":"BẠN ĐÃ PHÂN BIỆT ĐƯỢC OVERRIDING VÀ OVERLOADING?","datePublished":"2024-12-30T00:46+07:00","dateModified":"2024-12-30T00:47+07:00","image":{"@type":"ImageObject","url":"https://danganhvu.github.io/MyBlog/media/posts/19/overiding-va-overloading-63739896651.9348.jpg","height":451,"width":813},"description":"Overloading (Nạp chồng phương thức) và Overriding (ghi đè phương thức) là&hellip;","author":{"@type":"Person","name":"Dang Anh Vu","url":"https://danganhvu.github.io/MyBlog/authors/dang-anh-vu/"},"publisher":{"@type":"Organization","name":"Dang Anh Vu","logo":{"@type":"ImageObject","url":"https://danganhvu.github.io/MyBlog/media/website/logo.jpg","height":980,"width":980}}}</script>      
+        <noscript>
+            <style>
+                img[loading] {
+                    opacity: 1;
+                }
+            </style>
+        </noscript>	    
+        
+    </head>
+    <body class="post-template">
+        
+        <div class="container">
+<div class="left-bar">
+   <div class="left-bar__inner">
+      <header class="header">
+         <a class="logo" href="https://danganhvu.github.io/MyBlog/">
+               <img src="https://danganhvu.github.io/MyBlog/media/website/logo.jpg" alt="VU&#x27;S BLOG" width="980" height="980">
+         </a>
+
+            <nav class="navbar"> 
+               <button
+                  class="navbar__toggle"
+                  aria-label="Menu"
+                  aria-haspopup="true"
+                  aria-expanded="false">
+                  <span class="navbar__toggle__box">
+                     <span class="navbar__toggle__inner">Menu</span>
+                  </span>
+               </button>
+               
+               <ul class="navbar__menu">
+                     <li >
+                           <a
+                              href="https://danganhvu.github.io/MyBlog/"
+                                    target="_self"
+                              aria-label="Home">
+                              
+                              <span>Home</span>
+                           </a>
+                     </li>
+                     <li >
+                           <a
+                              href="https://danganhvu.github.io/MyBlog/post.html"
+                                    target="_self"
+                              aria-label="Post">
+                              
+                              <span>Post</span>
+                           </a>
+                     </li>
+                     <li >
+                           <a
+                              href="https://danganhvu.github.io/MyBlog/my-profile.html"
+                                    target="_self"
+                              aria-label="My Profile">
+                              
+                              <span>My Profile</span>
+                           </a>
+                     </li>
+               </ul>
+            </nav>
+         <a class="logo logo--atbottom" href="https://danganhvu.github.io/MyBlog/">
+               <img src="https://danganhvu.github.io/MyBlog/media/website/logo.jpg" alt="VU&#x27;S BLOG" width="980" height="980">
+         </a>
+      </header>
+   </div>
+</div><main class="main post">
+      <article class="content">
+               <figure class="content__featured-image content__featured-image--attop">
+                  <img
+                     src="https://danganhvu.github.io/MyBlog/media/posts/19/overiding-va-overloading-63739896651.9348.jpg"
+                        srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-xs.jpg 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-sm.jpg 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-md.jpg 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-xl.jpg 1024w" sizes="(min-width: 1460px) 938px, (min-width: 1200px) calc(75.83vw - 154px), (min-width: 1120px) 938px, (min-width: 900px) calc(55vw + 333px), 100vw"
+                      loading="eager"
+                     height="451"
+                     width="813"
+                     alt=""
+                     aria-describedby="image-caption">
+               </figure>
+
+            <div class="content__meta content__meta--attop">
+               <div class="content__meta--attop__inner">
+                  <div class="content__maintag">
+                     <svg width="20" height="20" aria-hidden="true" focusable="false">
+                        <use xlink:href="https://danganhvu.github.io/MyBlog/assets/svg/svg-map.svg#tag" />
+                     </svg>
+                     Published in <a href="https://danganhvu.github.io/MyBlog/tags/java/" class="metadata__maintag">Java</a>
+                  </div>
+
+               </div>
+            </div>
+
+         <div class="main__inner">
+
+               <div class="content__meta">
+                  
+                     <div class="content__author">
+                           <div>
+                              <a href="https://danganhvu.github.io/MyBlog/authors/dang-anh-vu/" class="content__author__name">Dang Anh Vu</a>
+                           </div>
+                     </div>
+
+                     <div class="content__date">
+                        <time datetime="2024-12-30T00:46">
+                              Dec 30, 2024
+                        </time>
+                     </div>
+
+               </div>
+             
+            <header class="content__header">
+               <h1 class="content__title">BẠN ĐÃ PHÂN BIỆT ĐƯỢC OVERRIDING VÀ OVERLOADING?</h1>
+            </header>
+
+            <div class="content__entry">
+               
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/overiding-va-overloading-63739896651.9348-2.jpg" height="451" width="813" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-2-xs.jpg 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-2-sm.jpg 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-2-md.jpg 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-2-xl.jpg 1024w">
+      
+    </figure>
+<div><b>Overloading (Nạp chồng phương thức) và Overriding (ghi đè phương thức) là hai khái niệm cơ bản trong lập trình mà bất kì newbie nào cũng cần phân biệt. Vậy chúng là gì? Khác nhau thế nào? Hãy cùng mình phân tích và tìm hiểu nhé.</b></div>
+
+    <h2 id="overloading-nap-chong-phuong-thuc-la-gi">
+      Overloading (Nạp chồng phương thức) là gì?
+    </h2>
+<div><p>
+Overloading là một kĩ thuật cho phép trong cùng một class có thể có nhiều phương thức cùng tên nhưng khác nhau về số lượng tham số hoặc kiểu dữ liệu tham số. Ví dụ chúng ta có hàm tinhTong dùng để cộng hai số nguyên. Khi muốn cộng ba số nguyên không lẽ tôi lại phải viết một hàm với tên khác(chẳng hạn <i>tinhTong1  </i>) và truyền vào 3 số nguyên hay sao? Như vậy thì code sẽ trở nên phức tạp hơn trong khi hai hàm có cùng một mục đích là cộng các số nguyên lại với nhau. Như vậy chúng ta sẽ <b>overload</b> hàm <i>tinhTong</i> như sau:
+</p></div>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/1.png" height="399" width="413" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/1-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/1-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/1-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/1-xl.png 1024w">
+      
+    </figure>
+<div><p>Khi gọi hàm <i>tinhTong</i> và truyền vào số lượng tham số khác nhau thì sẽ gọi tới hàm có số lượng tham số tương ứng</p></div>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/2.png" height="551" width="504" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/2-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/2-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/2-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/2-xl.png 1024w">
+      
+    </figure>
+<div><p>
+Chú ý vào cửa sổ "Watch 1" ta thấy giá trị của hai biến a và b lần lượt là giá trị trả về của hai hàm <i>tinhTong(int a, int b)</i> và hàm <i>tinhTong(int a, int b, int c)</i> 
+<br>  
+Tương tự chứ ta có thể <b>overload</b>   kiểu dữ liệu của tham số. Thay vì hàm tinhTong cộng hai số nguyên thì tôi cũng có thể cộng hai số thực, chỉ cần truyền vào 2 tham số kiểu double.
+<  /p></div>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/3.png" height="499" width="393" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/3-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/3-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/3-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/3-xl.png 1024w">
+      
+    </figure>
+<div><p>Tương tự giá trị biến c là giá trị trả về của hàm <i>tinhTong(double a, double b)</i> sau khi truyền vào hai tham số kiểu double.</p></div>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/4.png" height="554" width="505" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/4-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/4-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/4-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/4-xl.png 1024w">
+      
+    </figure>
+
+  <p>
+    Tạo constructor với số lượng tham số khác nhau cũng là một dạng của oveloading.
+  </p>
+
+    <h2 id="overriding-ghi-de-phuong-thuc-la-gi">
+      Overriding (Ghi đè phương thức) là gì?
+    </h2>
+<div>Overrding (tên đầy đủ là Method Overriding), được sử dụng trong trường hợp lớp con kế thừa từ lớp cha và muốn định nghĩa lại một phương thức đã có mặt ở lớp cha. Một lớp cha thông thường có thể có nhiều lớp con kế thừa, tuy nhiên phương thức ở lớp cha có thể phù hợp với lớp con này nhưng không phù hợp với lớp con khác, do đó lớp con cần ghi đè lại phương thức đó cho phù hợp. Ví dụ class <i>Animal</i> có phương thức <i>animalSound</i> đại diện cho tiếng kêu của động vật. Class <i>Dog</i> và <i>Cat</i> kế thừa từ class <i>Animal</i>, nhưng chó và mèo có tiếng kêu khác nhau nên phải <i>implement</i> phương thức <i>animalSound</i> cho mỗi lớp k  hác nhau. Vì vậy cần phải ghi đè lại phương thức <i>animalSound</  i> ở hai lớp Dog và Cat bằng cách sử dụng từ khóa <i>override</  i> như sau(lưu ý ví dụ minh họa sử dụng code C#, những ngôn ngữ khác nhau sẽ overriding theo cú pháp khác nhau nhưng về bản chất là như nhau).<i></div>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/5.png" height="401" width="319" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/5-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/5-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/5-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/5-xl.png 1024w">
+      
+    </figure>
+
+  <p>
+    Ở hàm main tạo instance của class Animal, Dog và Cat sẽ cho kết quả như sau.
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/6.png" height="242" width="314" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/6-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/6-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/6-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/6-xl.png 1024w">
+      
+    </figure>
+
+  <p>
+    =&gt; Kết quả
+  </p>
+
+    <figure class="post__image post__image--center">
+      <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/7.png" height="237" width="258" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/7-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/7-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/7-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/7-xl.png 1024w">
+      
+    </figure>
+
+    <h2 id="so-sanh">
+      So sánh
+    </h2>
+<div><table border="1">
+    <thead>
+        <tr>
+            <th>Overloading</th>
+            <th>Overriding</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Thể hiện đa hình tại compile time</td>
+            <td>Thể hiện đa hình tại runtime</td>
+        </tr>
+        <tr>
+            <td>Thêm hành vi cho phương thức</td>
+            <td>Thay đổi hành vi hiện tại của phương thức</td>
+        </tr>
+        <tr>
+            <td>Có thể khác nhau về số lượng và kiểu dữ liệu của tham số</td>
+            <td>Số lượng và kiểu dữ liệu của tham số phải giống nhau</td>
+        </tr>
+        <tr>
+            <td>Xảy ra trong cùng một class</td>
+            <td>Xảy ra ở 2 class có quan hệ kế thừa</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+  <p>
+    Hi vọng qua bài viết này các bạn sẽ hiểu rõ hơn và không còn nhầm lẫn giữa hai khái niệm này nữa.
+  </p>
+
+  <p>
+    Thanks ~
+  </p>
+            </div>     
+
+               <footer class="content__footer">
+
+                     <div class="content__last-updated">
+                        This article was updated on
+                        <time datetime="2024-12-30T00:47">
+                              Dec 30, 2024
+                        </time>
+                     </div>
+
+                        <div class="content__share">
+                              <a
+                                 href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdanganhvu.github.io%2FMyBlog%2Fban-da-phan-biet-duoc-overriding-va-overloading.html"
+                                 class="js-share facebook tltp tltp--top"
+                                 aria-label="Facebook"
+                                 rel="nofollow noopener noreferrer">
+                                 <svg>
+                                    <use xlink:href="https://danganhvu.github.io/MyBlog/assets/svg/svg-map.svg#facebook"/>
+                                 </svg>
+                                 <span>Facebook</span>
+                              </a>
+                           
+                           
+                              <a
+                                 href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fdanganhvu.github.io%2FMyBlog%2Fban-da-phan-biet-duoc-overriding-va-overloading.html&amp;media=https%3A%2F%2Fdanganhvu.github.io%2FMyBlog%2Fmedia%2Fposts%2F19%2Foveriding-va-overloading-63739896651.9348.jpg&amp;description=B%E1%BA%A0N%20%C4%90%C3%83%20PH%C3%82N%20BI%E1%BB%86T%20%C4%90%C6%AF%E1%BB%A2C%20OVERRIDING%20V%C3%80%20OVERLOADING%3F"
+                                 class="js-share pinterest tltp tltp--top"
+                                 aria-label="Pinterest"
+                                 rel="nofollow noopener noreferrer">
+                                 <svg>
+                                    <use xlink:href="https://danganhvu.github.io/MyBlog/assets/svg/svg-map.svg#pinterest"/>
+                                 </svg>
+                                 <span>Pinterest</span>
+                              </a>
+                           
+                           
+                           
+                           
+                        </div>
+
+               </footer>
+
+         </div>
+      </article>
+
+
+         <div class="content__section content__comments">
+				 <div class="main__inner">
+               
+             </div>
+			</div>
+
+
+
+</main>
+   <div class="right-bar">
+      <div class="right-bar__inner">
+         <div class="sidebar">
+
+               <section class="box authors">
+                  <h3 class="box__title">Authors</h3>
+                  <ul class="authors__cotainer">
+                           <li class="authors__item">
+                              <div>
+                                 <a href="https://danganhvu.github.io/MyBlog/authors/dang-anh-vu/" class="authors__title">Dang Anh Vu</a>
+                                    <span class="authors__meta">Post:  9</span>
+                              </div>
+                           </li>
+                  </ul>
+               </section>
+
+                  <section class="box tags">
+                     <h3 class="box__title">Recommended Topics</h3>
+                     <ul class="tags__list">
+                              <li class="tags__item">
+                                 <a href="https://danganhvu.github.io/MyBlog/tags/java/" class="btn btn--gray">Java
+                                       <sup>(5)</sup>
+                                 </a>
+                              </li>
+                              <li class="tags__item">
+                                 <a href="https://danganhvu.github.io/MyBlog/tags/javascript/" class="btn btn--gray">JavaScript
+                                       <sup>(5)</sup>
+                                 </a>
+                              </li>
+                     </ul>
+                  </section>
+
+
+               <section class="box newsletter">
+                  <h3 class="box__title">Subscribe to Mono</h3>
+                  <p class="newsletter__desc">Sign up to receive email updates and to hear what's going on with us!</p>
+                  <form>...
+               </section>
+         
+
+               <div class="box copyright">
+                  Powered by Publii - Open-Source CMS for Static Websites
+               </div>
+
+         </div>
+      </div>
+   </div>
+</div>
+
+<script defer src="https://danganhvu.github.io/MyBlog/assets/js/scripts.min.js?v=b2d91bcadbf5db401b76eb5bb3092eb7"></script>
+
+    <script>        
+        var images = document.querySelectorAll('img[loading]');
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+                images[i].classList.add('is-loaded');
+            } else {
+                images[i].addEventListener('load', function () {
+                    this.classList.add('is-loaded');
+                }, false);
+            }
+        }
+    </script>
+
+
+
+
+</body>
+</html>
