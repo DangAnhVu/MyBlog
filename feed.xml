@@ -3,7 +3,7 @@
     <title>VU&#x27;S BLOG</title>
     <link href="https://danganhvu.github.io/MyBlog/feed.xml" rel="self" />
     <link href="https://danganhvu.github.io/MyBlog" />
-    <updated>2024-12-30T00:47:05+07:00</updated>
+    <updated>2024-12-30T23:48:15+07:00</updated>
     <author>
         <name>Dang Anh Vu</name>
     </author>
@@ -693,19 +693,19 @@ Hàm <em>setter</em> định nghĩa bằng cách cho thêm set, hàm <em>getter<
 <pre class="line-numbers  language-javascript"><code>var obj = {
     age: 0,
 
-    set ageInfo(age) {                              //Định nghĩa setter
+    set ageInfo(age) { //Định nghĩa setter
         console.log('setter - ' + age);
         this.age = age;
     },
 
-    get ageInfo() {                                 //Định nghĩa getter
+    get ageInfo() { //Định nghĩa getter
         console.log('getter');
         return "Thông tin tuổi: " + this.age;
     }
 };
 
-obj.ageInfo = 25;          //Gán -&gt; Tự động gọi settter
-alert(obj.ageInfo);        //Không phải gán -&gt; Tự động gọi getter</code></pre>
+obj.ageInfo = 25; //Gán -&gt; Tự động gọi settter
+alert(obj.ageInfo); //Không phải gán -&gt; Tự động gọi getter</code></pre>
 <div><p>Trong trường hợp muốn định nghĩa <em>setter</em> / <em>getter</em> trong hàm tạo đối tượng thì bạn cần định nghĩa theo nguyên tắc thêm một thuộc tính vào đối tượng đã có với lệnh Object.defineProperty</p></div>
 <pre class="line-numbers  language-javascript"><code>//Một đối tượng đã có tên ob, thêm cho nó setter, getter có tên namepro
 Object.defineProperty(ob, 'namepro', {
@@ -773,7 +773,7 @@ var fruitbear = fruit;  // assign fruit object reference to fruitbear
 fruit == fruitbear; // return true
 fruit === fruitbear; // return true</code></pre>
 <pre class="line-numbers  language-javascript"><code>fruit.name = 'grape';
-console.log(fruitbear);    // yields { name: "grape" } instead of { name: "apple" }</code></pre>
+console.log(fruitbear);// yields { name: "grape" } instead of { name: "apple" }</code></pre>
 
     <h2 id="constructor-la-gi">
       Constructor là gì?
