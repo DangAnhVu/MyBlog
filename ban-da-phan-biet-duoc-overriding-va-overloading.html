@@ -13,10 +13,10 @@
         <link rel="alternate" type="application/atom+xml" href="https://danganhvu.github.io/MyBlog/feed.xml" />
 <link rel="alternate" type="application/json" href="https://danganhvu.github.io/MyBlog/feed.json" />
 
-        <meta property="og:title" content="BẠN ĐÃ PHÂN BIỆT ĐƯỢC OVERRIDING VÀ OVERLOADING?" /><meta property="og:image" content="https://danganhvu.github.io/MyBlog/media/posts/19/overiding-va-overloading-63739896651.9348.jpg"/><meta property="og:image:width" content="813" /><meta property="og:image:height" content="451" /><meta property="og:site_name" content="VU'S BLOG" /><meta property="og:description" content="Overloading (Nạp chồng phương thức) và Overriding (ghi đè phương thức) là&hellip;" /><meta property="og:url" content="https://danganhvu.github.io/MyBlog/ban-da-phan-biet-duoc-overriding-va-overloading.html" /><meta property="og:type" content="article" />
+        <meta property="og:title" content="BẠN ĐÃ PHÂN BIỆT ĐƯỢC OVERRIDING VÀ OVERLOADING?" /><meta property="og:image" content="https://danganhvu.github.io/MyBlog/media/website/logo.jpg"/><meta property="og:image:width" content="980" /><meta property="og:image:height" content="980" /><meta property="og:site_name" content="VU'S BLOG" /><meta property="og:description" content="Overloading (Nạp chồng phương thức) và Overriding (ghi đè phương thức) là&hellip;" /><meta property="og:url" content="https://danganhvu.github.io/MyBlog/ban-da-phan-biet-duoc-overriding-va-overloading.html" /><meta property="og:type" content="article" />
            <link rel="preload" href="https://danganhvu.github.io/MyBlog/assets/dynamic/fonts/publicsans/publicsans.woff2" as="font" type="font/woff2" crossorigin>
         <link rel="stylesheet" href="https://danganhvu.github.io/MyBlog/assets/css/style.css?v=f3255e888ee4af56f3e8437a2c4c99f3">
-        <script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://danganhvu.github.io/MyBlog/ban-da-phan-biet-duoc-overriding-va-overloading.html"},"headline":"BẠN ĐÃ PHÂN BIỆT ĐƯỢC OVERRIDING VÀ OVERLOADING?","datePublished":"2024-12-30T00:46+07:00","dateModified":"2024-12-30T00:47+07:00","image":{"@type":"ImageObject","url":"https://danganhvu.github.io/MyBlog/media/posts/19/overiding-va-overloading-63739896651.9348.jpg","height":451,"width":813},"description":"Overloading (Nạp chồng phương thức) và Overriding (ghi đè phương thức) là&hellip;","author":{"@type":"Person","name":"Dang Anh Vu","url":"https://danganhvu.github.io/MyBlog/authors/dang-anh-vu/"},"publisher":{"@type":"Organization","name":"Dang Anh Vu","logo":{"@type":"ImageObject","url":"https://danganhvu.github.io/MyBlog/media/website/logo.jpg","height":980,"width":980}}}</script>      
+        <script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://danganhvu.github.io/MyBlog/ban-da-phan-biet-duoc-overriding-va-overloading.html"},"headline":"BẠN ĐÃ PHÂN BIỆT ĐƯỢC OVERRIDING VÀ OVERLOADING?","datePublished":"2024-12-30T00:46+07:00","dateModified":"2025-01-07T14:17+07:00","image":{"@type":"ImageObject","url":"https://danganhvu.github.io/MyBlog/media/website/logo.jpg","height":980,"width":980},"description":"Overloading (Nạp chồng phương thức) và Overriding (ghi đè phương thức) là&hellip;","author":{"@type":"Person","name":"Dang Anh Vu","url":"https://danganhvu.github.io/MyBlog/authors/dang-anh-vu/"},"publisher":{"@type":"Organization","name":"Dang Anh Vu","logo":{"@type":"ImageObject","url":"https://danganhvu.github.io/MyBlog/media/website/logo.jpg","height":980,"width":980}}}</script>      
         <noscript>
             <style>
                 img[loading] {
@@ -84,16 +84,6 @@
    </div>
 </div><main class="main post">
       <article class="content">
-               <figure class="content__featured-image content__featured-image--attop">
-                  <img
-                     src="https://danganhvu.github.io/MyBlog/media/posts/19/overiding-va-overloading-63739896651.9348.jpg"
-                        srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-xs.jpg 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-sm.jpg 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-md.jpg 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/overiding-va-overloading-63739896651.9348-xl.jpg 1024w" sizes="(min-width: 1460px) 938px, (min-width: 1200px) calc(75.83vw - 154px), (min-width: 1120px) 938px, (min-width: 900px) calc(55vw + 333px), 100vw"
-                      loading="eager"
-                     height="451"
-                     width="813"
-                     alt=""
-                     aria-describedby="image-caption">
-               </figure>
 
             <div class="content__meta content__meta--attop">
                <div class="content__meta--attop__inner">
@@ -158,7 +148,7 @@ Overloading là một kĩ thuật cho phép trong cùng một class có thể c�
 Chú ý vào cửa sổ "Watch 1" ta thấy giá trị của hai biến a và b lần lượt là giá trị trả về của hai hàm <i>tinhTong(int a, int b)</i> và hàm <i>tinhTong(int a, int b, int c)</i> 
 <br>  
 Tương tự chứ ta có thể <b>overload</b>   kiểu dữ liệu của tham số. Thay vì hàm tinhTong cộng hai số nguyên thì tôi cũng có thể cộng hai số thực, chỉ cần truyền vào 2 tham số kiểu double.
-<  /p></div>
+</p></div>
 
     <figure class="post__image post__image--center">
       <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/3.png" height="499" width="393" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/3-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/3-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/3-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/3-xl.png 1024w">
@@ -178,7 +168,7 @@ Tương tự chứ ta có thể <b>overload</b>   kiểu dữ liệu của tham 
     <h2 id="overriding-ghi-de-phuong-thuc-la-gi">
       Overriding (Ghi đè phương thức) là gì?
     </h2>
-<div>Overrding (tên đầy đủ là Method Overriding), được sử dụng trong trường hợp lớp con kế thừa từ lớp cha và muốn định nghĩa lại một phương thức đã có mặt ở lớp cha. Một lớp cha thông thường có thể có nhiều lớp con kế thừa, tuy nhiên phương thức ở lớp cha có thể phù hợp với lớp con này nhưng không phù hợp với lớp con khác, do đó lớp con cần ghi đè lại phương thức đó cho phù hợp. Ví dụ class <i>Animal</i> có phương thức <i>animalSound</i> đại diện cho tiếng kêu của động vật. Class <i>Dog</i> và <i>Cat</i> kế thừa từ class <i>Animal</i>, nhưng chó và mèo có tiếng kêu khác nhau nên phải <i>implement</i> phương thức <i>animalSound</i> cho mỗi lớp k  hác nhau. Vì vậy cần phải ghi đè lại phương thức <i>animalSound</  i> ở hai lớp Dog và Cat bằng cách sử dụng từ khóa <i>override</  i> như sau(lưu ý ví dụ minh họa sử dụng code C#, những ngôn ngữ khác nhau sẽ overriding theo cú pháp khác nhau nhưng về bản chất là như nhau).<i></div>
+<div><p>Overrding (tên đầy đủ là Method Overriding), được sử dụng trong trường hợp lớp con kế thừa từ lớp cha và muốn định nghĩa lại một phương thức đã có mặt ở lớp cha. Một lớp cha thông thường có thể có nhiều lớp con kế thừa, tuy nhiên phương thức ở lớp cha có thể phù hợp với lớp con này nhưng không phù hợp với lớp con khác, do đó lớp con cần ghi đè lại phương thức đó cho phù hợp. Ví dụ class <i>Animal</i> có phương thức <i>animalSound</i> đại diện cho tiếng kêu của động vật. Class <i>Dog</i> và <i>Cat</i> kế thừa từ class <i>Animal</i>, nhưng chó và mèo có tiếng kêu khác nhau nên phải <i>implement</i> phương thức <i>animalSound</i> cho mỗi lớp k  hác nhau. Vì vậy cần phải ghi đè lại phương thức <i>animalSound</  i> ở hai lớp Dog và Cat bằng cách sử dụng từ khóa <i>override</  i> như sau(lưu ý ví dụ minh họa sử dụng code C#, những ngôn ngữ khác nhau sẽ overriding theo cú pháp khác nhau nhưng về bản chất là như nhau).<i></p></div>
 
     <figure class="post__image post__image--center">
       <img loading="lazy" src="https://danganhvu.github.io/MyBlog/media/posts/19/5.png" height="401" width="319" alt=""  sizes="(min-width: 760px) 660px, calc(93.18vw - 30px)" srcset="https://danganhvu.github.io/MyBlog/media/posts/19/responsive/5-xs.png 320w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/5-sm.png 480w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/5-md.png 768w ,https://danganhvu.github.io/MyBlog/media/posts/19/responsive/5-xl.png 1024w">
@@ -247,8 +237,8 @@ Tương tự chứ ta có thể <b>overload</b>   kiểu dữ liệu của tham 
 
                      <div class="content__last-updated">
                         This article was updated on
-                        <time datetime="2024-12-30T00:47">
-                              Dec 30, 2024
+                        <time datetime="2025-01-07T14:17">
+                              Jan 7, 2025
                         </time>
                      </div>
 
@@ -266,7 +256,7 @@ Tương tự chứ ta có thể <b>overload</b>   kiểu dữ liệu của tham 
                            
                            
                               <a
-                                 href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fdanganhvu.github.io%2FMyBlog%2Fban-da-phan-biet-duoc-overriding-va-overloading.html&amp;media=https%3A%2F%2Fdanganhvu.github.io%2FMyBlog%2Fmedia%2Fposts%2F19%2Foveriding-va-overloading-63739896651.9348.jpg&amp;description=B%E1%BA%A0N%20%C4%90%C3%83%20PH%C3%82N%20BI%E1%BB%86T%20%C4%90%C6%AF%E1%BB%A2C%20OVERRIDING%20V%C3%80%20OVERLOADING%3F"
+                                 href="https://pinterest.com/pin/create/button/?url=https%3A%2F%2Fdanganhvu.github.io%2FMyBlog%2Fban-da-phan-biet-duoc-overriding-va-overloading.html&amp;media=undefined&amp;description=B%E1%BA%A0N%20%C4%90%C3%83%20PH%C3%82N%20BI%E1%BB%86T%20%C4%90%C6%AF%E1%BB%A2C%20OVERRIDING%20V%C3%80%20OVERLOADING%3F"
                                  class="js-share pinterest tltp tltp--top"
                                  aria-label="Pinterest"
                                  rel="nofollow noopener noreferrer">
